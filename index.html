@@ -4,15 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- التسريع المباشر لتحميل صورة الغلاف أول شيء ومنع التحديث البصري المفاجئ -->
+<link rel="preload" as="image" href="01_cover.png">
+
 <!-- إعدادات المعاينة الفاخرة (Open Graph) لشكل الرابط عند الإرسال في الواتساب والتليجرام -->
 <title>دعوة زواج | محمد & سارة</title>
 <meta property="og:title" content="دعوة زواج | محمد & سارة 💍">
 <meta property="og:description" content="يتشرف آل موسى الحبوب وآل الريح وآل المساعد وآل أبو الحسن بدعوتكم لحضور حفل الزفاف">
-<meta property="og:image" content="https://mna-rose.vercel.app/01_cover.png">
+<meta property="og:image" content="https://mohammed-sarah.vercel.app/01_cover.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="1200">
-<meta property="og:url" content="https://mna-rose.vercel.app">
+<meta property="og:url" content="https://mohammed-sarah.vercel.app">
 <meta property="og:type" content="website">
 
 <!-- استدعاء خطوط قوقل العربية الفاخرة -->
@@ -40,6 +43,8 @@
     max-height: 600px;
     position: relative;
     perspective: 1500px;
+    background: #1a0f07; /* منع ظهور خلفيات بيضاء أثناء التحميل */
+    border-radius: 12px;
   }
 
   .card-page {
@@ -54,12 +59,14 @@
     backface-visibility: hidden;
     cursor: pointer;
     overflow: hidden;
+    background-color: #1a0f07;
   }
 
   .card-page img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 
   /* تصميم موحد بخامة الورق القديم المعتاد للكراسة */
@@ -138,7 +145,7 @@
 <div class="notebook-container">
   <!-- الصفحة 4 (العروسين - القاع) -->
   <div class="card-page" id="page4" style="z-index: 1;">
-    <img src="04_bridegroom.png" alt="صورة العروسين">
+    <img src="04_bridegroom.png" alt="صورة العروسين" loading="lazy">
   </div>
 
   <!-- الصفحة 3 (تفاصيل الرصة) -->
@@ -183,16 +190,16 @@
     </div>
   </div>
 
-  <!-- الصفحة 1 (غلاف الكراسة) -->
-  <div class="card-page" id="page1" onclick="flipPage(1)" style="z-index: 4;">
-    <img src="01_cover.png" alt="غلاف الكراسة">
+  <!-- الصفحة 1 (غلاف الكراسة - أعلى طبقة وأعلى أولوية تحميل) -->
+  <div class="card-page" id="page1" onclick="flipPage(1)" style="z-index: 10;">
+    <img src="01_cover.png" alt="غلاف الكراسة" fetchpriority="high" loading="eager">
   </div>
 </div>
 
 <div class="controls">
   <button class="btn" onclick="resetBook()">إعادة الفتح ↺</button>
-  <a href="https://www.google.com/maps/search/?api=1&query=Golden+Halls+%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B3%D9%83%D8%A9+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF+%D9%8AF%D8%AF%D9%8A%D9%86%D8%A9+%D9%86%D8%B5%D8%B1" target="_blank" class="btn">موقع القاعة 📍</a>
-  <a href="https://wa.me/249123100123?text=%D8%A3%D9%84%D9%81%20%D9%85%D8%A8%D8%B1%D9%88%D9%83%20%D9%84%D9%84%D8%B9%D8%B1%D8%B3%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D9%88%D8%B3%D8%A7%D8%B1%D8%A9%20%F0%9F%A5%B3%F0%9F%8E%89..%20%D8%A5%D9%86%20%D8%B4%D8%A7%D8%A1%20%D8%A7%D9%84%D9%84%D9%87%20%D8%AD%D8%A7%D8%B6%D8%B1%D9%8A%D9%86%20%D9%88%D8%AA%D9%83%D8%AA%D9%85%D9%84%20%D8%A7%D9%84%D9%81%D8%B1%D8%AD%D8%A9%20%D9%85%D8%B9%D8%A7%D9%83%D9%85%21" target="_blank" class="btn btn-green">تأكيد الحضور 💬</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Golden+Halls+%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B3%D9%83%D8%A9+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF+%D9%8AF%D8%AF%D9%8A%D9%8BD%D8%A9+%D9%86%D8%B5%D8%B1" target="_blank" class="btn">موقع القاعة 📍</a>
+  <a href="https://wa.me/249123100123?text=%D8%A3%D9%84%D9%81%20%D9%85%D8%A8%D8%B1%D9%88%D9%83%20%D9%84%D9%84%D8%B9%D8%B1%D8%B3%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D9%88%D8%B3%D8%A7%D8%B1%D8%A9%20%F0%9F%A5%B3%F0%9F%8E%89..%20%D8%A5%D9%8BD%20%D8%B4%D8%A7%D8%A1%20%D8%A7%D9%84%D9%84%D9%87%20%D8%AD%D8%A7%D8%B6%D8%B1%D9%8A%D9%86%20%D9%88%D8%AA%D9%83%D8%AA%D9%85%D9%84%20%D8%A7%D9%84%D9%81%D8%B1%D8%AD%D8%A9%20%D9%85%D8%B9%D8%A7%D9%83%D9%85%21" target="_blank" class="btn btn-green">تأكيد الحضور 💬</a>
 </div>
 
 <script>
