@@ -23,14 +23,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@600;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@600;800&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: #1a0f07;
+    background: #120904;
     font-family: 'Amiri', serif;
     display: flex;
     flex-direction: column;
@@ -38,16 +38,17 @@
     justify-content: center;
     min-height: 100vh;
     overflow-x: hidden;
+    padding: 10px 0;
   }
   
   .notebook-container {
-    width: 90vw;
-    max-width: 400px;
-    height: 135vw;
-    max-height: 600px;
+    width: 92vw;
+    max-width: 380px;
+    height: 138vw;
+    max-height: 570px;
     position: relative;
     perspective: 1000px;
-    background: #1a0f07;
+    background: #120904;
     border-radius: 12px;
     transform-style: preserve-3d;
   }
@@ -58,13 +59,13 @@
     position: absolute;
     top: 0; left: 0;
     border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.7);
     transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-origin: right center;
     backface-visibility: hidden;
     cursor: pointer;
     overflow: hidden;
-    background-color: #1a0f07;
+    background-color: #120904;
   }
 
   .card-page img {
@@ -74,144 +75,161 @@
     display: block;
   }
 
+  /* مؤشر التنبيه خارج البطاقة لمنع التداخل */
   .tap-hint {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.65);
-    color: #fff;
+    margin-bottom: 8px;
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
     font-family: 'Cairo', sans-serif;
     font-size: 11px;
     font-weight: bold;
-    padding: 5px 14px;
+    padding: 4px 14px;
     border-radius: 20px;
     pointer-events: none;
-    z-index: 50;
     animation: pulseHint 1.8s infinite;
-    border: 1px solid rgba(212, 175, 55, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.4);
   }
 
   @keyframes pulseHint {
-    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.9; }
-    50% { transform: translateX(-50%) scale(1.06); opacity: 1; }
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
   }
 
-  /* خامة وتنسيق ورقة الدعوة الفاخرة المعتمدة على الصورة المرفقة */
+  /* تصميم الورقة المحاكي للصورة المرفقة */
   .custom-page {
-    background: #fdfbf7 url('https://www.transparenttextures.com/patterns/aged-paper.png');
-    border: 8px solid #c5a059;
-    padding: 14px 10px;
+    background: #fcf8f2;
+    border: 6px solid #d4af37;
+    padding: 12px 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     color: #2c1605;
-    box-shadow: inset 0 0 20px rgba(197, 160, 89, 0.3);
+    box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.2);
   }
 
-  /* تصميم الصفحة الثانية - بطاقة العريس والعروس الملكية */
+  /* القوس الذهبي العلوي المحاكي للتصميم */
+  .arch-frame {
+    width: 100%;
+    border: 1.5px solid #c5a059;
+    border-radius: 120px 120px 0 0;
+    padding: 8px 6px 4px 6px;
+    margin-bottom: 2px;
+  }
+
+  .bismillah { font-family: 'Aref Ruqaa', serif; font-size: 15px; color: #7a1c1c; }
+  
   .quran-verse {
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 9.5px;
+    line-height: 1.35;
     color: #3b1e08;
-    border-bottom: 1px double #c5a059;
-    padding-bottom: 4px;
+    margin: 3px 0;
     font-weight: bold;
   }
-  .bismillah { font-family: 'Aref Ruqaa', serif; font-size: 16px; color: #8b0000; }
-  .invitation-header { font-family: 'Amiri', serif; font-size: 13px; font-weight: bold; color: #5a3d12; margin: 2px 0; }
+
+  .invitation-header { font-family: 'Amiri', serif; font-size: 11.5px; font-weight: bold; color: #5a3d12; }
   
   .families-grid {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4px;
+    gap: 2px;
     font-family: 'Amiri', serif;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     color: #2c1605;
-    margin: 4px 0;
-    line-height: 1.4;
+    margin: 2px 0;
+    line-height: 1.3;
   }
-  .families-grid div { padding: 2px; }
 
   .couples-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 4px 0;
+    gap: 8px;
+    margin: 2px 0;
   }
   .couple-name {
     font-family: 'Aref Ruqaa', serif;
-    font-size: 26px;
+    font-size: 24px;
     color: #8b0000;
     font-weight: bold;
-    text-shadow: 1px 1px 0px rgba(197, 160, 89, 0.4);
   }
-  .rings-icon { font-size: 20px; color: #c5a059; }
 
-  .details-card {
+  /* صناديق الزمان والمكان المحاكية للمرجع */
+  .info-box {
     width: 100%;
-    border: 1px solid #c5a059;
-    background: rgba(197, 160, 89, 0.08);
+    border: 1px solid #d4af37;
+    background: #f7f0e3;
     border-radius: 6px;
-    padding: 6px;
-    font-size: 11px;
-    line-height: 1.5;
+    padding: 4px 8px;
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Cairo', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .box-tag {
+    background: #8b0000;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
   }
 
-  /* الصفحة الثالثة (تفاصيل الرصة) */
-  .title-banner { font-family: 'Aref Ruqaa', serif; font-size: 22px; color: #8b0000; font-weight: bold; }
-  .sub-banner { font-family: 'Cairo', sans-serif; font-size: 13px; font-weight: 800; color: #2c1605; margin-bottom: 4px; }
+  .footer-text { font-size: 10px; font-weight: bold; color: #8b0000; margin-top: 2px; }
+
+  /* الصفحة الثالثة */
+  .title-banner { font-family: 'Aref Ruqaa', serif; font-size: 20px; color: #8b0000; font-weight: bold; }
+  .sub-banner { font-family: 'Cairo', sans-serif; font-size: 12px; font-weight: 800; color: #2c1605; }
   
   .details-box {
     width: 100%;
-    border: 1.5px solid #8b0000;
-    border-radius: 8px;
-    padding: 6px;
+    border: 1px solid #8b0000;
+    border-radius: 6px;
+    padding: 5px;
     background: rgba(184, 134, 11, 0.08);
     font-family: 'Cairo', sans-serif;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: bold;
     text-align: right;
-    line-height: 1.6;
+    line-height: 1.5;
   }
   
   .question-box {
     width: 100%;
-    border: 1.5px dashed #8b0000;
-    border-radius: 8px;
-    padding: 6px;
-    background: rgba(255, 255, 255, 0.5);
+    border: 1px dashed #8b0000;
+    border-radius: 6px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.6);
     font-family: 'Cairo', sans-serif;
     text-align: right;
   }
-  .q-title { color: #8b0000; font-weight: bold; font-size: 12px; text-align: center; margin-bottom: 2px; }
-  .q-text { font-size: 12px; font-weight: 800; text-align: center; color: #2c1605; margin-bottom: 4px; }
-  .option-item { font-size: 11px; font-weight: 700; margin: 2px 0; display: flex; align-items: center; gap: 6px; }
-  .checkbox { width: 12px; height: 12px; border: 2px solid #3b1e08; display: inline-block; border-radius: 3px; }
+  .q-title { color: #8b0000; font-weight: bold; font-size: 11px; text-align: center; }
+  .q-text { font-size: 11.5px; font-weight: 800; text-align: center; color: #2c1605; margin-bottom: 2px; }
+  .option-item { font-size: 10.5px; font-weight: 700; margin: 2px 0; display: flex; align-items: center; gap: 4px; }
+  .checkbox { width: 11px; height: 11px; border: 1.5px solid #3b1e08; display: inline-block; border-radius: 2px; }
   .checkbox.checked { background: #8b0000; border-color: #8b0000; position: relative; }
   .checkbox.checked::after { content: '✓'; color: #fff; font-size: 8px; position: absolute; top: -4px; right: 1px; }
 
-  .footer-welcome { font-family: 'Aref Ruqaa', serif; font-size: 14px; color: #8b0000; font-weight: bold; background: rgba(139, 0, 0, 0.08); padding: 3px 16px; border-radius: 12px; }
+  .footer-welcome { font-family: 'Aref Ruqaa', serif; font-size: 13px; color: #8b0000; font-weight: bold; background: rgba(139, 0, 0, 0.08); padding: 2px 14px; border-radius: 10px; }
 
   .flipped { transform: rotateY(-180deg); }
 
-  .controls { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; z-index: 100; }
-  .btn { background: #c29b38; color: #fff; border: none; padding: 9px 16px; border-radius: 20px; font-size: 13px; font-weight: bold; cursor: pointer; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-  .btn-green { background: #25d366; }
+  .controls { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; z-index: 100; }
+  .btn { background: #c29b38; color: #fff; border: none; padding: 8px 14px; border-radius: 18px; font-size: 12px; font-weight: bold; cursor: pointer; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
   .btn-salla { background: #1b5e20; }
 </style>
 </head>
 <body>
 
-<div class="notebook-container" id="tiltContainer" onclick="userInteracted()">
-  <div class="tap-hint">👆 اضغط لقلب الصفحة</div>
+<div class="tap-hint">👆 اضغط على الكروت لقلب الصفحة</div>
 
+<div class="notebook-container" id="tiltContainer" onclick="stopAutoPlay()">
   <div class="card-page" id="page4" style="z-index: 1;">
     <img src="04_bridegroom.png" alt="صورة العروسين" loading="lazy">
   </div>
@@ -239,10 +257,13 @@
   </div>
 
   <div class="card-page custom-page" id="page2" onclick="flipPage(2)" style="z-index: 3;">
-    <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</div>
-    <div class="quran-verse">
-      ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ﴾
+    <div class="arch-frame">
+      <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</div>
+      <div class="quran-verse">
+        ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ﴾
+      </div>
     </div>
+
     <div class="invitation-header">بكل مشاعر التقدير والسرور، يتشرف كلٌّ من:</div>
     
     <div class="families-grid">
@@ -252,20 +273,25 @@
       <div>آل محمد أحمد أبو الحسن</div>
     </div>
 
-    <div style="font-size: 11px; font-weight: bold; color: #5a3d12;">بدعوة سيادتكم وتطبيق حضور مراسم عقد قران نجليهما</div>
+    <div style="font-size: 10px; font-weight: bold; color: #5a3d12;">بدعوة سيادتكم وتطبيق حضور مراسم عقد قران نجليهما</div>
 
     <div class="couples-wrapper">
       <span class="couple-name">منا</span>
-      <span class="rings-icon">💍</span>
+      <span style="font-size: 18px; color: #d4af37;">💍</span>
       <span class="couple-name">سارة</span>
     </div>
 
-    <div class="details-card">
-      <b>📅 الزمان:</b> الأربعاء 16 سبتمبر 2026م (الساعة 9 مساءً)<br>
-      <b>📍 المكان:</b> قاعة جولدن هولس - نادي السكة - مدينة نصر
+    <div class="info-box">
+      <div>📅 يوم الأربعاء 16 سبتمبر 2026م (الساعة 9 مساءً)</div>
+      <span class="box-tag">الزمان</span>
     </div>
 
-    <div style="font-size: 11px; font-weight: bold; color: #8b0000;">تشريفكم لنا شرفٌ وتقدير، وحضوركم مصدر سعادتنا</div>
+    <div class="info-box">
+      <div>📍 قاعة جولدن هولس - نادي السكة - مدينة نصر</div>
+      <span class="box-tag">المكان</span>
+    </div>
+
+    <div class="footer-text">تشريفكم لنا شرفٌ وتقدير، وحضوركم مصدر سعادتنا</div>
   </div>
 
   <div class="card-page" id="page1" onclick="flipPage(1)" style="z-index: 10;">
@@ -275,75 +301,60 @@
 
 <div class="controls">
   <button class="btn" onclick="resetBook()">إعادة الفتح ↺</button>
-  <a href="https://www.google.com/maps/search/?api=1&query=Golden+Halls+%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B3%D9%83%D8%A9+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF+%D9%8AF%D8%AF%D9%8A%D9%8BD%D8%A9+%D9%86%D8%B5%D8%B1" target="_blank" class="btn">موقع القاعة 📍</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9+%D8%AC%D9%88%D9%84%D8%AF%D9%86+%D9%87%D9%88%D9%84%D8%B3+%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B3%D9%83%D8%A9" target="_blank" class="btn">موقع القاعة 📍</a>
   <button class="btn btn-salla" onclick="sallaOnNabi()">صلِّ على النبي 🌿</button>
 </div>
 
 <script>
-  let currentPage = 1;
-  let autoPlayInterval = null;
+  let step = 1;
+  let timer = null;
 
-  // إعداد التأثير ثلاثي الأبعاد
-  const tiltElement = document.querySelector("#tiltContainer");
-  VanillaTilt.init(tiltElement, {
-    max: 15,
+  // تشغيل التأثير ثلاثي الأبعاد
+  VanillaTilt.init(document.querySelector("#tiltContainer"), {
+    max: 12,
     speed: 400,
     glare: true,
-    "max-glare": 0.2,
+    "max-glare": 0.15,
     gyroscope: true
   });
 
-  // حل مشكلة حساس الحركة على أجهزة الآيفون (iOS Motion Permission)
-  function requestiOSMotion() {
-    if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
-      DeviceMotionEvent.requestPermission()
-        .then(response => {
-          if (response === 'granted') {
-            window.addEventListener('deviceorientation', () => {});
-          }
-        })
-        .catch(console.error);
-    }
-  }
-
-  // التدوير التلقائي كل 3 ثوانٍ
-  function startAutoPlay() {
-    autoPlayInterval = setInterval(() => {
-      if (currentPage <= 3) {
-        flipPage(currentPage);
+  // التدوير التلقائي للصفحات كل 3 ثوانٍ
+  function autoFlipEngine() {
+    timer = setInterval(() => {
+      if (step <= 3) {
+        flipPage(step);
       } else {
-        clearInterval(autoPlayInterval);
+        clearInterval(timer);
       }
     }, 3000);
   }
 
-  // إيقاف التدوير التلقائي فور لمس الشاشة من المستخدم
-  function userInteracted() {
-    requestiOSMotion();
-    if (autoPlayInterval) {
-      clearInterval(autoPlayInterval);
-      autoPlayInterval = null;
+  function stopAutoPlay() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
     }
   }
 
   function flipPage(pageNum) {
     document.getElementById('page' + pageNum).classList.add('flipped');
-    currentPage = pageNum + 1;
+    step = pageNum + 1;
   }
 
   function resetBook() {
+    stopAutoPlay();
     for (let i = 1; i <= 3; i++) {
       document.getElementById('page' + i).classList.remove('flipped');
     }
-    currentPage = 1;
+    step = 1;
   }
 
   function sallaOnNabi() {
     alert("اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى نَبِيِّنَا مُحَمَّدٍ ✨\nجزاك الله خيراً وشرفتنا بحضورك!");
   }
 
-  // البدء التلقائي عند التحميل
-  window.onload = startAutoPlay;
+  // انطلاق التدوير بعد التحميل مباشرة
+  window.addEventListener('DOMContentLoaded', autoFlipEngine);
 </script>
 
 </body>
