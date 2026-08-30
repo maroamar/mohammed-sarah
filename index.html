@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,6 @@
 <meta name="theme-color" content="#f7f1e5">
 <meta name="description" content="دعوة زواج محمد المصطفى (منا) وسارة - الأربعاء 16 سبتمبر 2026م">
 
-<!-- Open Graph / WhatsApp / Facebook Preview -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mohammed-sarah.vercel.app/">
 <meta property="og:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
@@ -17,7 +16,6 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="دعوة زواج محمد المصطفى (منا) وسارة">
 
-<!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://mohammed-sarah.vercel.app/">
 <meta name="twitter:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
@@ -27,49 +25,35 @@
 <title>دعوة زواج | محمد المصطفى (منا) وسارة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4eee2;--paper:#fffdf8;--gold:#b08a43;--gold2:#d9c18f;--ink:#332923;--muted:#756b61;--line:rgba(176,138,67,.30);--shadow:0 18px 45px rgba(58,43,28,.14)}
-*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100%;background:var(--bg)}body{min-height:100vh;padding:12px 10px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);font-family:Cairo,sans-serif;overflow-x:hidden}
-.wrapper{width:min(94vw,410px);margin-bottom:13px}.viewer{position:relative;width:100%;aspect-ratio:642/1013;border-radius:16px;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}
-.page{position:absolute;inset:0;padding:28px 23px 30px;background:var(--paper);opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .32s ease,transform .32s ease,visibility 0s linear .32s;overflow:auto}.page.active{opacity:1;visibility:visible;transform:translateX(0);transition-delay:0s}.page::before{content:"";position:absolute;inset:12px;border:1px solid var(--gold2);border-radius:9px;pointer-events:none}.page>*{position:relative;z-index:1}
-.cover{display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;background:radial-gradient(circle at 50% 30%,#fffefb 0,#f7f0e4 75%,#f1e8d9 100%)}.bismillah{font-family:'Aref Ruqaa',serif;color:var(--gold);font-size:clamp(20px,5.2vw,26px);margin-top:5px}.cover-title{font-size:13px;color:var(--muted);margin-bottom:6px}.names{font-family:'Aref Ruqaa',serif;color:var(--gold);font-size:clamp(34px,9vw,45px);line-height:1.12}.names .groom{display:block}.names .nickname{display:block;font-size:.54em;margin-top:5px}.names .and{display:block;font-size:25px;margin:5px 0}.date{font-size:12px;color:var(--muted);margin-bottom:10px}.hint{display:inline-block;padding:8px 18px;border:1px solid var(--gold);border-radius:999px;color:var(--gold);font-size:11px;font-weight:600;background:rgba(255,255,255,.68)}
-.invitation{padding:0;display:flex;align-items:center;justify-content:center;background:var(--paper)}.invitation img{width:100%;height:100%;display:block;object-fit:contain;background:var(--paper)}
-.photo{padding:0;background:#eadfce;display:flex;align-items:center;justify-content:center}.photo img{width:100%;height:100%;object-fit:contain;display:block}.photo::before{z-index:2;border-color:rgba(255,248,230,.75)}.photo-caption{position:absolute!important;z-index:3!important;right:12%;left:12%;bottom:24px;padding:9px 12px;border-radius:999px;background:rgba(45,34,26,.58);backdrop-filter:blur(4px);color:#fff;text-align:center;font-family:'Aref Ruqaa',serif;font-size:18px}
-.controls{display:flex;align-items:center;justify-content:space-between;margin-top:8px;padding:0 3px;color:var(--muted);font-size:10px}.arrow{border:0;background:transparent;color:var(--gold);font:700 20px Cairo;cursor:pointer;padding:2px 8px}.dots{display:flex;gap:5px;direction:ltr}.dot{width:6px;height:6px;border-radius:50%;background:var(--gold2)}.dot.active{background:var(--gold);transform:scale(1.25)}
-.actions{width:min(94vw,410px);display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.action{min-height:46px;padding:8px 6px;border:1.5px solid var(--gold);border-radius:12px;background:#ffffff;color:#332923;font:700 11.5px Cairo,sans-serif;text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.06);transition:all .2s ease}.action.primary{background:var(--gold);border-color:var(--gold);color:#ffffff;box-shadow:0 4px 12px rgba(176,138,67,.35)}.action:active{transform:scale(.96)}
-.toast{position:fixed;left:50%;bottom:20px;z-index:20;max-width:calc(100vw - 24px);padding:9px 15px;border-radius:999px;background:rgba(51,41,35,.96);color:#fff;font-size:11px;font-weight:600;text-align:center;opacity:0;pointer-events:none;transform:translate(-50%,15px);transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:390px){body{padding-top:7px}.page{padding:24px 18px 26px}.photo-caption{font-size:16px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:var(--bg)}
+body{min-height:100vh;padding:12px 10px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);font-family:Cairo,sans-serif;overflow-x:hidden}
+
+.wrapper{width:min(94vw,410px);margin-bottom:12px}
+.viewer{position:relative;width:100%;aspect-ratio:642/1013;border-radius:16px;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}
+.invitation-img{width:100%;height:100%;display:block;object-fit:contain;background:var(--paper)}
+
+.actions{width:min(94vw,410px);display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.action{min-height:46px;padding:8px 6px;border:1.5px solid var(--gold);border-radius:12px;background:#ffffff;color:#332923;font:700 11.5px Cairo,sans-serif;text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.06);transition:all .2s ease}
+.action.primary{background:var(--gold);border-color:var(--gold);color:#ffffff;box-shadow:0 4px 12px rgba(176,138,67,.35)}
+.action:active{transform:scale(.96)}
+
+.toast{position:fixed;left:50%;bottom:20px;z-index:20;max-width:calc(100vw - 24px);padding:9px 15px;border-radius:999px;background:rgba(51,41,35,.96);color:#fff;font-size:11px;font-weight:600;text-align:center;opacity:0;pointer-events:none;transform:translate(-50%,15px);transition:.25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:390px){body{padding-top:7px}}
 @media(max-height:700px){body{justify-content:flex-start}.wrapper{width:min(76vh,390px,94vw)}}
-@media(prefers-reduced-motion:reduce){.page,.toast{transition:none}}
+@media(prefers-reduced-motion:reduce){.toast{transition:none}}
 </style>
 </head>
 <body>
+
 <main class="wrapper" aria-label="دعوة زواج">
-  <div class="viewer" id="viewer">
-    <section class="page cover active" data-page="0" aria-label="غلاف الدعوة">
-      <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-      <div>
-        <div class="cover-title">دعوة زواج</div>
-        <h1 class="names"><span class="groom">محمد المصطفى</span><span class="nickname">(منا)</span><span class="and">و</span><span>سارة</span></h1>
-      </div>
-      <div><div class="date">الأربعاء، 16 سبتمبر 2026م</div><span class="hint">اضغط أو اسحب لفتح الدعوة</span></div>
-    </section>
-
-    <section class="page invitation" data-page="1" aria-label="الدعوة الرسمية">
-      <!-- اختر أي تصميم نهائي للدعوة وضعه باسم invitation.png؛ الصفحة الثانية ستعرضه كما هو. -->
-      <img src="invitation.png" alt="دعوة زواج محمد المصطفى (منا) وسارة" loading="eager" decoding="async">
-    </section>
-
-    <section class="page photo" data-page="2" aria-label="صورة العروسين">
-      <img src="04_bridegroom.png" alt="العروسان في إطلالة مستوحاة من الجرتق السوداني" loading="lazy" decoding="async">
-      <div class="photo-caption">بارك الله لهما وجمع بينهما في خير</div>
-    </section>
-  </div>
-  <div class="controls" aria-label="التنقل بين صفحات الدعوة">
-    <button class="arrow" id="prev" type="button" aria-label="الصفحة السابقة">‹</button>
-    <div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
-    <button class="arrow" id="next" type="button" aria-label="الصفحة التالية">›</button>
+  <div class="viewer">
+    <img class="invitation-img" src="invitation.png" alt="دعوة زواج محمد المصطفى (منا) وسارة" loading="eager" decoding="async">
   </div>
 </main>
 
@@ -78,20 +62,44 @@
   <button class="action" type="button" id="shareButton">رسل الدعوة لزول تاني</button>
   <button class="action" type="button" id="salawatButton">صلِّ على النبي ﷺ</button>
 </nav>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
 const SITE_URL='https://mohammed-sarah.vercel.app/';
-const pages=[...document.querySelectorAll('.page')],dots=[...document.querySelectorAll('.dot')];let current=0,startX=null;
-function showPage(n){current=Math.max(0,Math.min(pages.length-1,n));pages.forEach((p,i)=>p.classList.toggle('active',i===current));dots.forEach((d,i)=>d.classList.toggle('active',i===current));document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===pages.length-1}
-function next(){showPage(current+1)}function prev(){showPage(current-1)}
-document.getElementById('next').onclick=next;document.getElementById('prev').onclick=prev;
-const viewer=document.getElementById('viewer');viewer.addEventListener('touchstart',e=>startX=e.changedTouches[0].clientX,{passive:true});viewer.addEventListener('touchend',e=>{if(startX===null)return;const d=e.changedTouches[0].clientX-startX;if(Math.abs(d)>45)(d<0?next:prev)();startX=null},{passive:true});
-viewer.addEventListener('click',e=>{if(e.target.closest('button'))return;const r=viewer.getBoundingClientRect();if(e.clientX-r.left<r.width*.38)prev();else if(e.clientX-r.left>r.width*.62)next()});
-document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')next();if(e.key==='ArrowRight')prev()});
-const toast=document.getElementById('toast');let toastTimer;function toastMsg(t){clearTimeout(toastTimer);toast.textContent=t;toast.classList.add('show');toastTimer=setTimeout(()=>toast.classList.remove('show'),2700)}
-document.getElementById('shareButton').onclick=async()=>{const data={title:'دعوة زواج | محمد المصطفى (منا) وسارة',text:'نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\nالأربعاء 16 سبتمبر 2026م\nقاعة جولدن هولز - نادي السكة - مدينة نصر',url:SITE_URL};if(navigator.share){try{await navigator.share(data)}catch(e){}}else{try{await navigator.clipboard.writeText(SITE_URL);toastMsg('تم نسخ رابط الدعوة')}catch(e){toastMsg(SITE_URL)}}};
-document.getElementById('salawatButton').onclick=async()=>{const t='اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';try{await navigator.clipboard.writeText(t)}catch(e){}toastMsg(t)};
-showPage(0);
+const toast=document.getElementById('toast');
+let toastTimer;
+
+function toastMsg(t){
+  clearTimeout(toastTimer);
+  toast.textContent=t;
+  toast.classList.add('show');
+  toastTimer=setTimeout(()=>toast.classList.remove('show'),2700);
+}
+
+document.getElementById('shareButton').onclick=async()=>{
+  const data={
+    title:'دعوة زواج | محمد المصطفى (منا) وسارة',
+    text:'نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\nالأربعاء 16 سبتمبر 2026م\nقاعة جولدن هولز - نادي السكة - مدينة نصر',
+    url:SITE_URL
+  };
+  if(navigator.share){
+    try{await navigator.share(data)}catch(e){}
+  }else{
+    try{
+      await navigator.clipboard.writeText(SITE_URL);
+      toastMsg('تم نسخ رابط الدعوة');
+    }catch(e){
+      toastMsg(SITE_URL);
+    }
+  }
+};
+
+document.getElementById('salawatButton').onclick=async()=>{
+  const t='اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
+  try{await navigator.clipboard.writeText(t)}catch(e){}
+  toastMsg(t);
+};
 </script>
 </body>
 </html>
