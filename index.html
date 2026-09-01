@@ -1,8 +1,10 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
 <meta name="theme-color" content="#f7f1e5">
 <meta name="description" content="دعوة زواج محمد المصطفى (منا) وسارة - الأربعاء 16 سبتمبر 2026م">
 
@@ -17,89 +19,374 @@
 <meta property="og:image:alt" content="دعوة زواج محمد المصطفى (منا) وسارة">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://mohammed-sarah.vercel.app/">
 <meta name="twitter:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
 <meta name="twitter:description" content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م">
 <meta name="twitter:image" content="https://mohammed-sarah.vercel.app/og-cover.png">
 
+<link rel="canonical" href="https://mohammed-sarah.vercel.app/">
+<link rel="icon" href="favicon.png" type="image/png">
+
 <title>دعوة زواج | محمد المصطفى (منا) وسارة</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#f4eee2;--paper:#fffdf8;--gold:#b08a43;--gold2:#d9c18f;--ink:#332923;--muted:#756b61;--line:rgba(176,138,67,.30);--shadow:0 18px 45px rgba(58,43,28,.14)}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%;background:var(--bg)}
-body{min-height:100vh;padding:12px 10px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);font-family:Cairo,sans-serif;overflow-x:hidden}
+:root{
+  --bg:#f4eee2;
+  --paper:#fffdf8;
+  --gold:#b08a43;
+  --ink:#332923;
+  --line:rgba(176,138,67,.30);
+  --shadow:0 18px 45px rgba(58,43,28,.14);
+}
 
-.wrapper{width:min(94vw,410px);margin-bottom:12px}
-.viewer{position:relative;width:100%;aspect-ratio:642/1013;border-radius:16px;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}
-.invitation-img{width:100%;height:100%;display:block;object-fit:contain;background:var(--paper)}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-.actions{width:min(94vw,410px);display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.action{min-height:46px;padding:8px 6px;border:1.5px solid var(--gold);border-radius:12px;background:#ffffff;color:#332923;font:700 11.5px Cairo,sans-serif;text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.06);transition:all .2s ease}
-.action.primary{background:var(--gold);border-color:var(--gold);color:#ffffff;box-shadow:0 4px 12px rgba(176,138,67,.35)}
-.action:active{transform:scale(.96)}
+html,
+body{
+  min-height:100%;
+  background:var(--bg);
+}
 
-.toast{position:fixed;left:50%;bottom:20px;z-index:20;max-width:calc(100vw - 24px);padding:9px 15px;border-radius:999px;background:rgba(51,41,35,.96);color:#fff;font-size:11px;font-weight:600;text-align:center;opacity:0;pointer-events:none;transform:translate(-50%,15px);transition:.25s}
-.toast.show{opacity:1;transform:translate(-50%,0)}
+body{
+  min-height:100vh;
+  min-height:100dvh;
 
-@media(max-width:390px){body{padding-top:7px}}
-@media(max-height:700px){body{justify-content:flex-start}.wrapper{width:min(76vh,390px,94vw)}}
-@media(prefers-reduced-motion:reduce){.toast{transition:none}}
+  padding:
+    max(12px,env(safe-area-inset-top))
+    max(10px,env(safe-area-inset-right))
+    max(24px,env(safe-area-inset-bottom))
+    max(10px,env(safe-area-inset-left));
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  color:var(--ink);
+  font-family:Cairo,sans-serif;
+  overflow-x:hidden;
+}
+
+.wrapper{
+  width:min(94vw,420px);
+  margin-bottom:14px;
+}
+
+.viewer{
+  position:relative;
+  width:100%;
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--paper);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.invitation-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.actions{
+  width:min(94vw,420px);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.action{
+  width:100%;
+  min-height:48px;
+  padding:10px 14px;
+
+  border:1.5px solid var(--gold);
+  border-radius:12px;
+
+  background:#fff;
+  color:var(--ink);
+
+  font:700 15px Cairo,sans-serif;
+
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  cursor:pointer;
+
+  box-shadow:0 3px 8px rgba(0,0,0,.06);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease,
+    border-color .2s ease;
+}
+
+.action.primary{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#fff;
+  box-shadow:0 4px 12px rgba(176,138,67,.35);
+}
+
+.action:active{
+  transform:scale(.98);
+}
+
+.action:focus-visible{
+  outline:3px solid rgba(176,138,67,.45);
+  outline-offset:3px;
+}
+
+@media(hover:hover){
+  .action:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,.10);
+  }
+
+  .action.primary:hover{
+    box-shadow:0 8px 20px rgba(176,138,67,.40);
+  }
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:max(20px,env(safe-area-inset-bottom));
+
+  z-index:20;
+
+  width:min(92vw,420px);
+  max-width:420px;
+
+  padding:10px 15px;
+
+  border-radius:14px;
+
+  background:rgba(51,41,35,.96);
+  color:#fff;
+
+  font-size:12px;
+  font-weight:600;
+  line-height:1.8;
+  text-align:center;
+
+  opacity:0;
+  pointer-events:none;
+
+  transform:translate(-50%,15px);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+@media(max-width:390px){
+  body{
+    padding-top:7px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .action,
+  .toast{
+    transition:none;
+  }
+}
 </style>
+
 </head>
+
 <body>
 
 <main class="wrapper" aria-label="دعوة زواج">
+
   <div class="viewer">
-    <img class="invitation-img" src="invitation.png" alt="دعوة زواج محمد المصطفى (منا) وسارة" loading="eager" decoding="async">
+    <img
+      class="invitation-img"
+      src="invitation.png"
+      alt="دعوة زواج محمد المصطفى (منا) وسارة"
+      fetchpriority="high"
+      decoding="async"
+    >
   </div>
+
 </main>
 
 <nav class="actions" aria-label="خيارات الدعوة">
-  <a class="action primary" href="https://www.google.com/maps/search/?api=1&query=قاعة+جولدن+هولز+نادي+السكة+مدينة+نصر" target="_blank" rel="noopener noreferrer">موقع الصالة</a>
-  <button class="action" type="button" id="shareButton">رسل الدعوة لزول تاني</button>
-  <button class="action" type="button" id="salawatButton">صلِّ على النبي ﷺ</button>
+
+<a
+class="action primary"
+href="https://www.google.com/maps/search/?api=1&query=قاعة+جولدن+هولز+نادي+السكة+مدينة+نصر"
+target="_blank"
+rel="noopener noreferrer"
+
+>
+
+```
+موقع الصالة
+```
+
+  </a>
+
+<button
+class="action"
+type="button"
+id="shareButton"
+
+>
+
+```
+أرسل الدعوة لزول تاني
+```
+
+  </button>
+
+<button
+class="action"
+type="button"
+id="salawatButton"
+
+>
+
+```
+صلِّ على النبي ﷺ
+```
+
+  </button>
+
 </nav>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div
+  class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite"
+></div>
 
 <script>
-const SITE_URL='https://mohammed-sarah.vercel.app/';
-const toast=document.getElementById('toast');
+const SITE_URL =
+  window.location.origin + window.location.pathname;
+
+const toast = document.getElementById('toast');
+const shareButton = document.getElementById('shareButton');
+const salawatButton = document.getElementById('salawatButton');
+
 let toastTimer;
 
-function toastMsg(t){
+function toastMsg(message){
   clearTimeout(toastTimer);
-  toast.textContent=t;
+
+  toast.textContent = message;
   toast.classList.add('show');
-  toastTimer=setTimeout(()=>toast.classList.remove('show'),2700);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+  },2700);
 }
 
-document.getElementById('shareButton').onclick=async()=>{
-  const data={
-    title:'دعوة زواج | محمد المصطفى (منا) وسارة',
-    text:'نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\nالأربعاء 16 سبتمبر 2026م\nقاعة جولدن هولز - نادي السكة - مدينة نصر',
-    url:SITE_URL
-  };
-  if(navigator.share){
-    try{await navigator.share(data)}catch(e){}
-  }else{
-    try{
-      await navigator.clipboard.writeText(SITE_URL);
-      toastMsg('تم نسخ رابط الدعوة');
-    }catch(e){
-      toastMsg(SITE_URL);
-    }
-  }
-};
+async function copyText(text){
 
-document.getElementById('salawatButton').onclick=async()=>{
-  const t='اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
-  try{await navigator.clipboard.writeText(t)}catch(e){}
-  toastMsg(t);
-};
+  if(navigator.clipboard && window.isSecureContext){
+    await navigator.clipboard.writeText(text);
+    return true;
+  }
+
+  const textarea = document.createElement('textarea');
+
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+
+  document.body.appendChild(textarea);
+
+  textarea.focus();
+  textarea.select();
+
+  const success =
+    document.execCommand('copy');
+
+  textarea.remove();
+
+  if(!success){
+    throw new Error('Copy failed');
+  }
+
+  return true;
+}
+
+shareButton.addEventListener(
+  'click',
+  async () => {
+
+    const data = {
+      title:
+        'دعوة زواج | محمد المصطفى (منا) وسارة',
+
+      text:
+        'نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\n' +
+        'الأربعاء 16 سبتمبر 2026م\n' +
+        'قاعة جولدن هولز - نادي السكة - مدينة نصر',
+
+      url: SITE_URL
+    };
+
+    if(navigator.share){
+
+      try{
+        await navigator.share(data);
+        return;
+      }
+      catch(error){
+
+        if(error.name === 'AbortError'){
+          return;
+        }
+      }
+    }
+
+    try{
+      await copyText(SITE_URL);
+      toastMsg('تم نسخ رابط الدعوة');
+    }
+    catch(error){
+      toastMsg('تعذر نسخ الرابط');
+    }
+
+  }
+);
+
+salawatButton.addEventListener(
+  'click',
+  async () => {
+
+    const text =
+      'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
+
+    try{
+      await copyText(text);
+    }
+    catch(error){}
+
+    toastMsg(text);
+  }
+);
 </script>
+
 </body>
 </html>
