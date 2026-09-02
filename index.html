@@ -1,59 +1,122 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <meta name="theme-color" content="#f7f1e5">
+
 <meta name="description" content="دعوة زواج محمد المصطفى (منا) وسارة - الأربعاء 16 سبتمبر 2026م">
 
 <meta property="og:type" content="website">
+
 <meta property="og:url" content="https://mohammed-sarah.vercel.app/">
+
 <meta property="og:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
-<meta property="og:description" content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م - قاعة جولدن هولز">
+
+<meta
+  property="og:description"
+  content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م - قاعة جولدن هولز"
+>
+
 <meta property="og:image" content="https://mohammed-sarah.vercel.app/og-cover.png">
+
 <meta property="og:image:type" content="image/png">
+
 <meta property="og:image:width" content="1200">
+
 <meta property="og:image:height" content="630">
+
 <meta property="og:image:alt" content="دعوة زواج محمد المصطفى (منا) وسارة">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
-<meta name="twitter:description" content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م">
-<meta name="twitter:image" content="https://mohammed-sarah.vercel.app/og-cover.png">
+<meta property="og:locale" content="ar_AR">
 
-<link rel="canonical" href="https://mohammed-sarah.vercel.app/">
+<meta
+  property="og:site_name"
+  content="دعوة زواج محمد المصطفى (منا) وسارة"
+>
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta
+  name="twitter:title"
+  content="💍 دعوة زواج | محمد المصطفى (منا) وسارة"
+>
+
+<meta
+  name="twitter:description"
+  content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م"
+>
+
+<meta
+  name="twitter:image"
+  content="https://mohammed-sarah.vercel.app/og-cover.png"
+>
+
+<link
+  rel="canonical"
+  href="https://mohammed-sarah.vercel.app/"
+>
+
 <link rel="icon" href="favicon.png" type="image/png">
 
 <title>دعوة زواج | محمد المصطفى (منا) وسارة</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
 
 <style>
+
 :root{
+
   --bg:#f4eee2;
   --paper:#fffdf8;
   --gold:#b08a43;
   --ink:#332923;
   --line:rgba(176,138,67,.30);
   --shadow:0 18px 45px rgba(58,43,28,.14);
+
+  color-scheme:light;
 }
 
+
+
 *{
+
   box-sizing:border-box;
   margin:0;
   padding:0;
+
 }
+
+
 
 html,
 body{
+
   min-height:100%;
   background:var(--bg);
+
 }
 
+
+
 body{
+
   min-height:100vh;
   min-height:100dvh;
 
@@ -70,40 +133,67 @@ body{
 
   color:var(--ink);
   font-family:Cairo,sans-serif;
+
   overflow-x:hidden;
+
 }
+
+
 
 .wrapper{
+
   width:min(94vw,420px);
   margin-bottom:14px;
+
 }
+
+
 
 .viewer{
+
   position:relative;
   width:100%;
+
   border-radius:16px;
   overflow:hidden;
+
   background:var(--paper);
+
   border:1px solid var(--line);
+
   box-shadow:var(--shadow);
+
 }
 
+
+
 .invitation-img{
+
   width:100%;
   height:auto;
   display:block;
+
 }
 
+
+
 .actions{
+
   width:min(94vw,420px);
+
   display:flex;
   flex-direction:column;
   gap:10px;
+
 }
 
+
+
 .action{
+
   width:100%;
   min-height:48px;
+
   padding:10px 14px;
 
   border:1.5px solid var(--gold);
@@ -115,12 +205,16 @@ body{
   font:700 15px Cairo,sans-serif;
 
   text-decoration:none;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   text-align:center;
 
   cursor:pointer;
+
+  touch-action:manipulation;
 
   box-shadow:0 3px 8px rgba(0,0,0,.06);
 
@@ -129,37 +223,75 @@ body{
     box-shadow .2s ease,
     background-color .2s ease,
     border-color .2s ease;
+
 }
 
+
+
 .action.primary{
+
   background:var(--gold);
   border-color:var(--gold);
   color:#fff;
+
   box-shadow:0 4px 12px rgba(176,138,67,.35);
+
 }
+
+
 
 .action:active{
+
   transform:scale(.98);
+
 }
+
+
 
 .action:focus-visible{
+
   outline:3px solid rgba(176,138,67,.45);
   outline-offset:3px;
+
 }
+
+
+
+.action:disabled{
+
+  opacity:.65;
+  cursor:default;
+
+}
+
+
 
 @media(hover:hover){
+
   .action:hover{
+
     transform:translateY(-2px);
+
     box-shadow:0 8px 18px rgba(0,0,0,.10);
+
   }
+
+
 
   .action.primary:hover{
+
     box-shadow:0 8px 20px rgba(176,138,67,.40);
+
   }
+
 }
 
+
+
 .toast{
+
   position:fixed;
+
   left:50%;
   bottom:max(20px,env(safe-area-inset-bottom));
 
@@ -178,6 +310,7 @@ body{
   font-size:12px;
   font-weight:600;
   line-height:1.8;
+
   text-align:center;
 
   opacity:0;
@@ -188,34 +321,57 @@ body{
   transition:
     opacity .25s ease,
     transform .25s ease;
+
 }
+
+
 
 .toast.show{
+
   opacity:1;
   transform:translate(-50%,0);
+
 }
+
+
 
 @media(max-width:390px){
+
   body{
+
     padding-top:7px;
+
   }
+
 }
 
+
+
 @media(prefers-reduced-motion:reduce){
+
   .action,
   .toast{
+
     transition:none;
+
   }
+
 }
+
 </style>
 
 </head>
 
+
+
 <body>
+
+
 
 <main class="wrapper" aria-label="دعوة زواج">
 
   <div class="viewer">
+
     <img
       class="invitation-img"
       src="invitation.png"
@@ -225,38 +381,94 @@ body{
       fetchpriority="high"
       decoding="async"
     >
+
   </div>
 
 </main>
 
+
+
 <nav class="actions" aria-label="خيارات الدعوة">
+
+
+
+  <!-- =====================================================
+       موقع الصالة
+       ===================================================== -->
 
   <a
     class="action primary"
-    href="https://www.google.com/maps/search/?api=1&query=جولدن+هولز+بوابة+رقم+1+نادي+السكة+الحديد+مدينة+نصر"
+
+    href="https://www.google.com/maps/search/?api=1&query=جولدن+هولز-+GOLDEN+HALLS،+بوابة+رقم+1،+نادي+السكة+الحديد،+مدينة+نصر،+محافظة+القاهرة+4433017&query_place_id=ChIJNwgDIjs_WBQR83So0t4vbTI"
+
     target="_blank"
+
     rel="noopener noreferrer"
+
+    aria-label="فتح موقع جولدن هولز على الخريطة"
+
   >
+
     موقع الصالة
+
   </a>
+
+
+
+  <!-- =====================================================
+       مشاركة الدعوة
+       ===================================================== -->
 
   <button
     class="action"
     type="button"
     id="shareButton"
+    aria-label="إرسال الدعوة إلى شخص آخر"
   >
+
     أرسل الدعوة لزول تاني
+
   </button>
+
+
+
+  <!-- =====================================================
+       إضافة الموعد إلى التقويم
+       ===================================================== -->
+
+  <button
+    class="action"
+    type="button"
+    id="calendarButton"
+    aria-label="إضافة موعد عقد القران وحفل الزفاف إلى التقويم"
+  >
+
+    أضف الموعد إلى التقويم
+
+  </button>
+
+
+
+  <!-- =====================================================
+       الصلاة على النبي
+       ===================================================== -->
 
   <button
     class="action"
     type="button"
     id="salawatButton"
+    aria-label="نسخ الصلاة على النبي صلى الله عليه وسلم"
   >
+
     صلِّ على النبي ﷺ
+
   </button>
 
+
+
 </nav>
+
+
 
 <div
   class="toast"
@@ -265,106 +477,513 @@ body{
   aria-live="polite"
 ></div>
 
-<script>
-const SITE_URL = window.location.origin + window.location.pathname;
 
-const toast = document.getElementById('toast');
-const shareButton = document.getElementById('shareButton');
-const salawatButton = document.getElementById('salawatButton');
+
+<script>
+
+/* =========================================================
+   الإعدادات الأساسية
+   ========================================================= */
+
+
+
+const SITE_URL = 'https://mohammed-sarah.vercel.app/';
+
+
+
+const SHARE_TITLE =
+  'دعوة زواج | محمد المصطفى (منا) وسارة';
+
+
+
+const VENUE =
+  'جولدن هولز - GOLDEN HALLS، بوابة رقم 1، نادي السكة الحديد، مدينة نصر، محافظة القاهرة 4433017';
+
+
+
+const SHARE_TEXT =
+
+  'نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\n' +
+
+  'الأربعاء 16 سبتمبر 2026م\n' +
+
+  'من الساعة 9 مساءً حتى 12 صباحًا\n' +
+
+  VENUE +
+
+  '\n\n' +
+
+  'رابط الدعوة:\n' +
+
+  SITE_URL;
+
+
+
+/* =========================================================
+   عناصر الصفحة
+   ========================================================= */
+
+
+
+const toast =
+  document.getElementById('toast');
+
+
+
+const shareButton =
+  document.getElementById('shareButton');
+
+
+
+const calendarButton =
+  document.getElementById('calendarButton');
+
+
+
+const salawatButton =
+  document.getElementById('salawatButton');
+
+
 
 let toastTimer;
 
+
+
+/* =========================================================
+   Toast
+   ========================================================= */
+
+
+
 function toastMsg(message){
+
   clearTimeout(toastTimer);
 
   toast.textContent = message;
+
   toast.classList.add('show');
 
   toastTimer = setTimeout(() => {
+
     toast.classList.remove('show');
+
   }, 2700);
+
 }
+
+
+
+/* =========================================================
+   نسخ النص
+   ========================================================= */
+
+
 
 async function copyText(text){
 
-  if(navigator.clipboard && window.isSecureContext){
+  if(
+    navigator.clipboard &&
+    window.isSecureContext
+  ){
+
     await navigator.clipboard.writeText(text);
+
     return true;
+
   }
 
-  const textarea = document.createElement('textarea');
+
+
+  const textarea =
+    document.createElement('textarea');
+
+
 
   textarea.value = text;
+
   textarea.style.position = 'fixed';
   textarea.style.left = '-9999px';
+  textarea.style.top = '0';
+  textarea.style.opacity = '0';
+
+
 
   document.body.appendChild(textarea);
+
+
 
   textarea.focus();
   textarea.select();
 
-  const success = document.execCommand('copy');
+
+
+  const success =
+    document.execCommand('copy');
+
+
 
   textarea.remove();
 
+
+
   if(!success){
+
     throw new Error('Copy failed');
+
   }
+
+
 
   return true;
+
 }
 
+
+
+/* =========================================================
+   مشاركة الدعوة
+   ========================================================= */
+
+
+
 shareButton.addEventListener(
+
   'click',
+
   async () => {
+
+    if(shareButton.disabled){
+
+      return;
+
+    }
+
+
+
+    shareButton.disabled = true;
+
+
 
     const data = {
-      title: 'دعوة زواج | محمد المصطفى (منا) وسارة',
-      text:
-        'نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\n' +
-        'الأربعاء 16 سبتمبر 2026م\n' +
-        'قاعة جولدن هولز - بوابة رقم 1 - نادي السكة الحديد - مدينة نصر',
+
+      title: SHARE_TITLE,
+
+      text: SHARE_TEXT,
+
       url: SITE_URL
+
     };
 
+
+
+    let shared = false;
+
+
+
+    /* -----------------------------------------------------
+       1. المشاركة الأصلية في الهاتف
+       ----------------------------------------------------- */
+
     if(navigator.share){
+
       try{
+
         await navigator.share(data);
-        return;
+
+        shared = true;
+
       }
+
       catch(error){
+
         if(error.name === 'AbortError'){
+
+          shareButton.disabled = false;
+
           return;
+
         }
+
       }
+
     }
 
-    try{
-      await copyText(SITE_URL);
-      toastMsg('تم نسخ رابط الدعوة');
+
+
+    if(!shared){
+
+      /* ---------------------------------------------------
+         2. فتح واتساب مباشرة كحل احتياطي
+         --------------------------------------------------- */
+
+      try{
+
+        const whatsappUrl =
+
+          'https://wa.me/?text=' +
+
+          encodeURIComponent(SHARE_TEXT);
+
+
+
+        window.open(
+
+          whatsappUrl,
+
+          '_blank',
+
+          'noopener,noreferrer'
+
+        );
+
+
+
+        shared = true;
+
+      }
+
+      catch(error){
+
+        shared = false;
+
+      }
+
     }
-    catch(error){
-      toastMsg('تعذر نسخ الرابط');
+
+
+
+    if(!shared){
+
+      /* ---------------------------------------------------
+         3. الاحتياطي الأخير: نسخ الرابط
+         --------------------------------------------------- */
+
+      try{
+
+        await copyText(SITE_URL);
+
+        toastMsg('تم نسخ رابط الدعوة');
+
+      }
+
+      catch(error){
+
+        toastMsg(
+          'تعذر إرسال الدعوة أو نسخ الرابط'
+        );
+
+      }
+
     }
+
+
+
+    setTimeout(() => {
+
+      shareButton.disabled = false;
+
+    }, 700);
 
   }
+
 );
+
+
+
+/* =========================================================
+   إضافة الموعد إلى التقويم
+   ========================================================= */
+
+
+
+calendarButton.addEventListener(
+
+  'click',
+
+  () => {
+
+
+
+    /*
+
+      التاريخ:
+
+      الأربعاء 16 سبتمبر 2026
+
+
+
+      بداية الحفل:
+
+      9:00 مساءً
+
+
+
+      نهاية الحفل:
+
+      12:00 صباحًا
+
+      أي بداية الخميس 17 سبتمبر 2026
+
+
+
+      صيغة ICS تستخدم وقتًا محليًا عائمًا
+
+      حتى لا يحدث تحويل غير مرغوب فيه بين
+
+      المناطق الزمنية.
+
+    */
+
+
+
+    const icsContent =
+
+      'BEGIN:VCALENDAR\r\n' +
+
+      'VERSION:2.0\r\n' +
+
+      'PRODID:-//Mohammed Sarah Wedding//AR\r\n' +
+
+      'CALSCALE:GREGORIAN\r\n' +
+
+      'METHOD:PUBLISH\r\n' +
+
+      'BEGIN:VEVENT\r\n' +
+
+      'UID:mohammed-sarah-wedding-20260916@mohammed-sarah.vercel.app\r\n' +
+
+      'DTSTAMP:20260902T004500Z\r\n' +
+
+      'DTSTART:20260916T210000\r\n' +
+
+      'DTEND:20260917T000000\r\n' +
+
+      'SUMMARY:عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\r\n' +
+
+      'LOCATION:' + VENUE + '\r\n' +
+
+      'DESCRIPTION:نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\\nالأربعاء 16 سبتمبر 2026م\\nمن الساعة 9 مساءً حتى 12 صباحًا\\n' +
+
+      VENUE +
+
+      '\\n' +
+
+      'رابط الدعوة: ' +
+
+      SITE_URL +
+
+      '\r\n' +
+
+      'URL:' +
+
+      SITE_URL +
+
+      '\r\n' +
+
+      'END:VEVENT\r\n' +
+
+      'END:VCALENDAR\r\n';
+
+
+
+    const blob = new Blob(
+
+      [icsContent],
+
+      {
+
+        type:'text/calendar;charset=utf-8'
+
+      }
+
+    );
+
+
+
+    const url =
+      URL.createObjectURL(blob);
+
+
+
+    const link =
+      document.createElement('a');
+
+
+
+    link.href = url;
+
+    link.download =
+      'دعوة-زواج-محمد-وسارة.ics';
+
+
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    link.remove();
+
+
+
+    setTimeout(() => {
+
+      URL.revokeObjectURL(url);
+
+    }, 1000);
+
+
+
+    toastMsg(
+      'تم تجهيز موعد الدعوة للتقويم'
+    );
+
+  }
+
+);
+
+
+
+/* =========================================================
+   الصلاة على النبي ﷺ
+   ========================================================= */
+
+
 
 salawatButton.addEventListener(
+
   'click',
+
   async () => {
 
-    const text = 'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
+    const text =
+      'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
+
+
 
     try{
+
       await copyText(text);
+
     }
-    catch(error){}
+
+    catch(error){
+
+      /* لا نوقف إظهار الرسالة إذا فشل النسخ */
+
+    }
+
+
 
     toastMsg(text);
+
   }
+
 );
+
 </script>
 
+
+
 </body>
+
 </html>
