@@ -29,13 +29,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#f4eee2;
   --paper:#fffdf8;
   --gold:#b08a43;
+  --gold-hover:#967332;
   --ink:#332923;
   --line:rgba(176,138,67,.30);
   --shadow:0 18px 45px rgba(58,43,28,.14);
@@ -56,28 +57,28 @@ body{
   min-height:100vh;
   min-height:100dvh;
   padding:
-    max(12px,env(safe-area-inset-top))
-    max(10px,env(safe-area-inset-right))
+    max(16px,env(safe-area-inset-top))
+    max(12px,env(safe-area-inset-right))
     max(24px,env(safe-area-inset-bottom))
-    max(10px,env(safe-area-inset-left));
+    max(12px,env(safe-area-inset-left));
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   color:var(--ink);
-  font-family:Cairo,sans-serif;
+  font-family:'Cairo', sans-serif;
   overflow-x:hidden;
 }
 
 .wrapper{
   width:min(94vw,420px);
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 
 .viewer{
   position:relative;
   width:100%;
-  border-radius:16px;
+  border-radius:18px;
   overflow:hidden;
   background:var(--paper);
   border:1px solid var(--line);
@@ -90,6 +91,7 @@ body{
   display:block;
 }
 
+/* إعادة تنسيق شبكة الأزرار للاتساق */
 .actions{
   width:min(94vw,420px);
   display:flex;
@@ -97,30 +99,39 @@ body{
   gap:10px;
 }
 
+.btn-group{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+  width:100%;
+}
+
 .action{
   width:100%;
   min-height:48px;
-  padding:10px 14px;
+  padding:10px 12px;
   border:1.5px solid var(--gold);
   border-radius:12px;
   background:#fff;
   color:var(--ink);
-  font:700 15px Cairo,sans-serif;
+  font:700 14px 'Cairo', sans-serif;
   text-decoration:none;
-  display:flex;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   cursor:pointer;
-  box-shadow:0 3px 8px rgba(0,0,0,.06);
+  box-shadow:0 3px 8px rgba(0,0,0,.04);
   transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
+  gap:6px;
 }
 
 .action.primary{
   background:var(--gold);
   border-color:var(--gold);
   color:#fff;
-  box-shadow:0 4px 12px rgba(176,138,67,.35);
+  box-shadow:0 4px 14px rgba(176,138,67,.35);
+  font-size:15px;
 }
 
 .action:active{
@@ -135,18 +146,83 @@ body{
 @media(hover:hover){
   .action:hover{
     transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(0,0,0,.10);
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
   }
   .action.primary:hover{
+    background:var(--gold-hover);
+    border-color:var(--gold-hover);
     box-shadow:0 8px 20px rgba(176,138,67,.40);
   }
+}
+
+/* نافذة الخيارات لتطبيقات التقويم */
+.modal-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(3px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+}
+
+.modal-overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.modal-card{
+  width:min(88vw, 360px);
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px 16px;
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+  text-align:center;
+  transform:scale(.92);
+  transition:transform .25s ease;
+}
+
+.modal-overlay.show .modal-card{
+  transform:scale(1);
+}
+
+.modal-title{
+  font-size:16px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:14px;
+}
+
+.modal-actions{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.modal-close{
+  margin-top:10px;
+  background:transparent;
+  border:none;
+  color:#888;
+  font-family:'Cairo', sans-serif;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
 }
 
 .toast{
   position:fixed;
   left:50%;
   bottom:max(20px,env(safe-area-inset-bottom));
-  z-index:20;
+  z-index:120;
   width:min(92vw,420px);
   max-width:420px;
   padding:10px 15px;
@@ -169,11 +245,12 @@ body{
 }
 
 @media(max-width:390px){
-  body{ padding-top:7px; }
+  body{ padding-top:10px; }
+  .btn-group{ grid-template-columns: 1fr; }
 }
 
 @media(prefers-reduced-motion:reduce){
-  .action, .toast{ transition:none; }
+  .action, .toast, .modal-overlay, .modal-card{ transition:none; }
 }
 </style>
 </head>
@@ -200,34 +277,52 @@ body{
     target="_blank"
     rel="noopener noreferrer"
   >
-    موقع الصالة
+    📍 موقع الصالة
   </a>
 
-  <button
-    class="action"
-    type="button"
-    id="calendarButton"
-  >
-    إضافة للتقويم 📅
-  </button>
+  <div class="btn-group">
+    <button
+      class="action"
+      type="button"
+      id="calendarButton"
+    >
+      📅 إضافة للتقويم
+    </button>
 
-  <button
-    class="action"
-    type="button"
-    id="shareButton"
-  >
-    أرسل الدعوة لزول تاني
-  </button>
+    <button
+      class="action"
+      type="button"
+      id="shareButton"
+    >
+      🔗 أرسل الدعوة
+    </button>
+  </div>
 
   <button
     class="action"
     type="button"
     id="salawatButton"
   >
-    صلِّ على النبي ﷺ
+    ✨ صلِّ على النبي ﷺ
   </button>
 
 </nav>
+
+<!-- Modal خيارات التقويم -->
+<div class="modal-overlay" id="calendarModal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-title">اختر تطبيق التقويم الخاص بك</div>
+    <div class="modal-actions">
+      <a class="action" id="gCalLink" target="_blank" rel="noopener noreferrer">
+        تقويم قوقل (Google Calendar)
+      </a>
+      <button class="action" type="button" id="icsLink">
+        تنزيل ملف التقويم (.ics / آبل)
+      </button>
+    </div>
+    <button class="modal-close" type="button" id="closeModal">إلغاء</button>
+  </div>
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -238,6 +333,11 @@ const toast = document.getElementById('toast');
 const shareButton = document.getElementById('shareButton');
 const salawatButton = document.getElementById('salawatButton');
 const calendarButton = document.getElementById('calendarButton');
+
+const calendarModal = document.getElementById('calendarModal');
+const closeModal = document.getElementById('closeModal');
+const gCalLink = document.getElementById('gCalLink');
+const icsLink = document.getElementById('icsLink');
 
 let toastTimer;
 
@@ -268,24 +368,54 @@ async function copyText(text){
   return true;
 }
 
-/* إضافة Event للتقويم بملف .ics معتمد لقوقل وآبل */
-calendarButton.addEventListener('click', () => {
-  const title = "حفل زفاف محمد المصطفى (منا) وسارة";
-  const details = "حضور عقد قران وحفل زفاف محمد المصطفى وسارة - قاعة جولدن هولز بوابة 1 نادي السكة الحديد";
-  const location = "قاعة جولدن هولز، بوابة 1، نادي السكة الحديد، مدينة نصر، القاهرة";
-  const startDate = "20260916T190000Z"; // 16 سبتمبر 2026 الساعة 6:00 مساءً بتوقيت مصر (UTC-2)
-  const endDate = "20260916T230000Z";
+/* بيانات التوقيت الموحدة */
+const EVENT_DATA = {
+  title: "حفل زفاف محمد المصطفى (منا) وسارة",
+  details: "حضور عقد قران وحفل زفاف محمد المصطفى وسارة - قاعة جولدن هولز بوابة 1 نادي السكة الحديد",
+  location: "قاعة جولدن هولز، بوابة 1، نادي السكة الحديد، مدينة نصر، القاهرة",
+  // 16 سبتمبر 2026: التوقيت الصيفي في مصر (GMT+3)
+  // الحفل 7:00 مساءً محلياً = 16:00 UTC
+  // النهاية 11:00 مساءً محلياً = 20:00 UTC
+  startUtc: "20260916T160000Z",
+  endUtc: "20260916T200000Z"
+};
 
+/* فتح خيارات التقويم */
+calendarButton.addEventListener('click', () => {
+  // تجهيز رابط قوقل المباشر
+  const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(EVENT_DATA.title)}&dates=${EVENT_DATA.startUtc}/${EVENT_DATA.endUtc}&details=${encodeURIComponent(EVENT_DATA.details)}&location=${encodeURIComponent(EVENT_DATA.location)}`;
+  gCalLink.href = gCalUrl;
+
+  calendarModal.classList.add('show');
+  calendarModal.setAttribute('aria-hidden', 'false');
+});
+
+closeModal.addEventListener('click', () => {
+  calendarModal.classList.remove('show');
+  calendarModal.setAttribute('aria-hidden', 'true');
+});
+
+calendarModal.addEventListener('click', (e) => {
+  if (e.target === calendarModal) {
+    calendarModal.classList.remove('show');
+    calendarModal.setAttribute('aria-hidden', 'true');
+  }
+});
+
+/* تنزيل ملف .ics المعياري لتقويم آبل والتطبيقات الأخرى */
+icsLink.addEventListener('click', () => {
   const icsData = 
 `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Wedding Invitation//AR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
 BEGIN:VEVENT
-SUMMARY:${title}
-DESCRIPTION:${details}
-LOCATION:${location}
-DTSTART:${startDate}
-DTEND:${endDate}
+SUMMARY:${EVENT_DATA.title}
+DESCRIPTION:${EVENT_DATA.details}
+LOCATION:${EVENT_DATA.location}
+DTSTART:${EVENT_DATA.startUtc}
+DTEND:${EVENT_DATA.endUtc}
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR`;
@@ -298,7 +428,8 @@ END:VCALENDAR`;
   link.click();
   document.body.removeChild(link);
 
-  toastMsg('تم تنزيل موعد المناسبة للتقويم');
+  calendarModal.classList.remove('show');
+  toastMsg('تم تنزيل ملف التقويم');
 });
 
 shareButton.addEventListener('click', async () => {
