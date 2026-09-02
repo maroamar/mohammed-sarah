@@ -47,8 +47,7 @@
   padding:0;
 }
 
-html,
-body{
+html, body{
   min-height:100%;
   background:var(--bg);
 }
@@ -56,18 +55,15 @@ body{
 body{
   min-height:100vh;
   min-height:100dvh;
-
   padding:
     max(12px,env(safe-area-inset-top))
     max(10px,env(safe-area-inset-right))
     max(24px,env(safe-area-inset-bottom))
     max(10px,env(safe-area-inset-left));
-
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-
   color:var(--ink);
   font-family:Cairo,sans-serif;
   overflow-x:hidden;
@@ -105,30 +101,19 @@ body{
   width:100%;
   min-height:48px;
   padding:10px 14px;
-
   border:1.5px solid var(--gold);
   border-radius:12px;
-
   background:#fff;
   color:var(--ink);
-
   font:700 15px Cairo,sans-serif;
-
   text-decoration:none;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-
   cursor:pointer;
-
   box-shadow:0 3px 8px rgba(0,0,0,.06);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease,
-    background-color .2s ease,
-    border-color .2s ease;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
 }
 
 .action.primary{
@@ -152,7 +137,6 @@ body{
     transform:translateY(-2px);
     box-shadow:0 8px 18px rgba(0,0,0,.10);
   }
-
   .action.primary:hover{
     box-shadow:0 8px 20px rgba(176,138,67,.40);
   }
@@ -162,32 +146,21 @@ body{
   position:fixed;
   left:50%;
   bottom:max(20px,env(safe-area-inset-bottom));
-
   z-index:20;
-
   width:min(92vw,420px);
   max-width:420px;
-
   padding:10px 15px;
-
   border-radius:14px;
-
   background:rgba(51,41,35,.96);
   color:#fff;
-
   font-size:12px;
   font-weight:600;
   line-height:1.8;
   text-align:center;
-
   opacity:0;
   pointer-events:none;
-
   transform:translate(-50%,15px);
-
-  transition:
-    opacity .25s ease,
-    transform .25s ease;
+  transition: opacity .25s ease, transform .25s ease;
 }
 
 .toast.show{
@@ -196,25 +169,18 @@ body{
 }
 
 @media(max-width:390px){
-  body{
-    padding-top:7px;
-  }
+  body{ padding-top:7px; }
 }
 
 @media(prefers-reduced-motion:reduce){
-  .action,
-  .toast{
-    transition:none;
-  }
+  .action, .toast{ transition:none; }
 }
 </style>
-
 </head>
 
 <body>
 
 <main class="wrapper" aria-label="دعوة زواج">
-
   <div class="viewer">
     <img
       class="invitation-img"
@@ -224,19 +190,26 @@ body{
       decoding="async"
     >
   </div>
-
 </main>
 
 <nav class="actions" aria-label="خيارات الدعوة">
 
   <a
     class="action primary"
-    href="https://maps.app.goo.gl/uX7G7L8T3E7V"
+    href="https://www.google.com/maps/search/?api=1&query=%D8%AC%D9%88%D9%84%D8%AF%D9%86+%D9%87%D9%88%D9%84%D8%B2+%D8%A8%D9%88%D8%A7%D8%A8%D8%A9+1+%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B3%D9%83%D8%A9+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF+%D9%85%D8%AF%D9%8A%D9%86%D8%A9+%D9%86%D8%B5%D8%B1"
     target="_blank"
     rel="noopener noreferrer"
   >
     موقع الصالة
   </a>
+
+  <button
+    class="action"
+    type="button"
+    id="calendarButton"
+  >
+    إضافة للتقويم 📅
+  </button>
 
   <button
     class="action"
@@ -256,12 +229,7 @@ body{
 
 </nav>
 
-<div
-  class="toast"
-  id="toast"
-  role="status"
-  aria-live="polite"
-></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 const SITE_URL = 'https://mohammed-sarah.vercel.app/';
@@ -269,15 +237,14 @@ const SITE_URL = 'https://mohammed-sarah.vercel.app/';
 const toast = document.getElementById('toast');
 const shareButton = document.getElementById('shareButton');
 const salawatButton = document.getElementById('salawatButton');
+const calendarButton = document.getElementById('calendarButton');
 
 let toastTimer;
 
 function toastMsg(message){
   clearTimeout(toastTimer);
-
   toast.textContent = message;
   toast.classList.add('show');
-
   toastTimer = setTimeout(() => {
     toast.classList.remove('show');
   }, 2700);
@@ -288,67 +255,75 @@ async function copyText(text){
     await navigator.clipboard.writeText(text);
     return true;
   }
-
   const textarea = document.createElement('textarea');
   textarea.value = text;
   textarea.style.position = 'fixed';
   textarea.style.left = '-9999px';
-
   document.body.appendChild(textarea);
   textarea.focus();
   textarea.select();
-
   const success = document.execCommand('copy');
   textarea.remove();
-
-  if(!success){
-    throw new Error('Copy failed');
-  }
-
+  if(!success) throw new Error('Copy failed');
   return true;
 }
 
-shareButton.addEventListener(
-  'click',
-  async () => {
-    if(navigator.share){
-      try{
-        // إرسال الرابط فقط يسمح للواتساب والمنصات بقراءة الـ Open Graph وإظهار الكارت الأنيق
-        await navigator.share({
-          url: SITE_URL
-        });
-        return;
-      }
-      catch(error){
-        if(error.name === 'AbortError'){
-          return;
-        }
-      }
-    }
+/* إضافة Event للتقويم بملف .ics معتمد لقوقل وآبل */
+calendarButton.addEventListener('click', () => {
+  const title = "حفل زفاف محمد المصطفى (منا) وسارة";
+  const details = "حضور عقد قران وحفل زفاف محمد المصطفى وسارة - قاعة جولدن هولز بوابة 1 نادي السكة الحديد";
+  const location = "قاعة جولدن هولز، بوابة 1، نادي السكة الحديد، مدينة نصر، القاهرة";
+  const startDate = "20260916T190000Z"; // 16 سبتمبر 2026 الساعة 9:00 مساءً بتوقيت مصر (UTC+2)
+  const endDate = "20260916T230000Z";
 
+  const icsData = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding Invitation//AR
+BEGIN:VEVENT
+SUMMARY:${title}
+DESCRIPTION:${details}
+LOCATION:${location}
+DTSTART:${startDate}
+DTEND:${endDate}
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+  const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.setAttribute('download', 'wedding-event.ics');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  toastMsg('تم تنزيل موعد المناسبة للتقويم');
+});
+
+shareButton.addEventListener('click', async () => {
+  if(navigator.share){
     try{
-      await copyText(SITE_URL);
-      toastMsg('تم نسخ رابط الدعوة');
-    }
-    catch(error){
-      toastMsg('تعذر نسخ الرابط');
+      await navigator.share({ url: SITE_URL });
+      return;
+    } catch(error){
+      if(error.name === 'AbortError') return;
     }
   }
-);
 
-salawatButton.addEventListener(
-  'click',
-  async () => {
-    const text = 'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
-
-    try{
-      await copyText(text);
-    }
-    catch(error){}
-
-    toastMsg(text);
+  try{
+    await copyText(SITE_URL);
+    toastMsg('تم نسخ رابط الدعوة');
+  } catch(error){
+    toastMsg('تعذر نسخ الرابط');
   }
-);
+});
+
+salawatButton.addEventListener('click', async () => {
+  const text = 'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
+  try{ await copyText(text); } catch(error){}
+  toastMsg(text);
+});
 </script>
 
 </body>
