@@ -10,20 +10,32 @@
 
 <meta name="theme-color" content="#f7f1e5">
 
-<meta name="description" content="دعوة زواج محمد المصطفى (منا) وسارة - الأربعاء 16 سبتمبر 2026م">
+<meta
+  name="description"
+  content="دعوة زواج محمد المصطفى (منا) وسارة - الأربعاء 16 سبتمبر 2026م"
+>
 
 <meta property="og:type" content="website">
 
-<meta property="og:url" content="https://mohammed-sarah.vercel.app/">
+<meta
+  property="og:url"
+  content="https://mohammed-sarah.vercel.app/"
+>
 
-<meta property="og:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
+<meta
+  property="og:title"
+  content="💍 دعوة زواج | محمد المصطفى (منا) وسارة"
+>
 
 <meta
   property="og:description"
   content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م - قاعة جولدن هولز"
 >
 
-<meta property="og:image" content="https://mohammed-sarah.vercel.app/og-cover.png">
+<meta
+  property="og:image"
+  content="https://mohammed-sarah.vercel.app/og-cover.png"
+>
 
 <meta property="og:image:type" content="image/png">
 
@@ -31,7 +43,10 @@
 
 <meta property="og:image:height" content="630">
 
-<meta property="og:image:alt" content="دعوة زواج محمد المصطفى (منا) وسارة">
+<meta
+  property="og:image:alt"
+  content="دعوة زواج محمد المصطفى (منا) وسارة"
+>
 
 <meta property="og:locale" content="ar_AR">
 
@@ -40,7 +55,10 @@
   content="دعوة زواج محمد المصطفى (منا) وسارة"
 >
 
-<meta name="twitter:card" content="summary_large_image">
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
 
 <meta
   name="twitter:title"
@@ -91,6 +109,7 @@
   --shadow:0 18px 45px rgba(58,43,28,.14);
 
   color-scheme:light;
+
 }
 
 
@@ -487,7 +506,8 @@ body{
 
 
 
-const SITE_URL = 'https://mohammed-sarah.vercel.app/';
+const SITE_URL =
+  'https://mohammed-sarah.vercel.app/';
 
 
 
@@ -676,12 +696,13 @@ shareButton.addEventListener(
 
 
 
-    let shared = false;
+    let completed = false;
 
 
 
     /* -----------------------------------------------------
-       1. المشاركة الأصلية في الهاتف
+       الأولوية الأولى:
+       نظام المشاركة الأصلي للهاتف
        ----------------------------------------------------- */
 
     if(navigator.share){
@@ -690,7 +711,7 @@ shareButton.addEventListener(
 
         await navigator.share(data);
 
-        shared = true;
+        completed = true;
 
       }
 
@@ -710,11 +731,12 @@ shareButton.addEventListener(
 
 
 
-    if(!shared){
+    /* -----------------------------------------------------
+       الأولوية الثانية:
+       واتساب
+       ----------------------------------------------------- */
 
-      /* ---------------------------------------------------
-         2. فتح واتساب مباشرة كحل احتياطي
-         --------------------------------------------------- */
+    if(!completed){
 
       try{
 
@@ -738,13 +760,13 @@ shareButton.addEventListener(
 
 
 
-        shared = true;
+        completed = true;
 
       }
 
       catch(error){
 
-        shared = false;
+        completed = false;
 
       }
 
@@ -752,11 +774,12 @@ shareButton.addEventListener(
 
 
 
-    if(!shared){
+    /* -----------------------------------------------------
+       الأولوية الأخيرة:
+       نسخ الرابط
+       ----------------------------------------------------- */
 
-      /* ---------------------------------------------------
-         3. الاحتياطي الأخير: نسخ الرابط
-         --------------------------------------------------- */
+    if(!completed){
 
       try{
 
@@ -791,6 +814,115 @@ shareButton.addEventListener(
 
 
 /* =========================================================
+   إنشاء ملف ICS كحل احتياطي
+   ========================================================= */
+
+
+
+function createICS(){
+
+  const icsContent =
+
+    'BEGIN:VCALENDAR\r\n' +
+
+    'VERSION:2.0\r\n' +
+
+    'PRODID:-//Mohammed Sarah Wedding//AR\r\n' +
+
+    'CALSCALE:GREGORIAN\r\n' +
+
+    'METHOD:PUBLISH\r\n' +
+
+    'BEGIN:VEVENT\r\n' +
+
+    'UID:mohammed-sarah-wedding-20260916@mohammed-sarah.vercel.app\r\n' +
+
+    'DTSTAMP:20260902T004500Z\r\n' +
+
+    'DTSTART:20260916T210000\r\n' +
+
+    'DTEND:20260917T000000\r\n' +
+
+    'SUMMARY:عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\r\n' +
+
+    'LOCATION:' +
+
+    VENUE +
+
+    '\r\n' +
+
+    'DESCRIPTION:نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\\nالأربعاء 16 سبتمبر 2026م\\nمن الساعة 9 مساءً حتى 12 صباحًا\\n' +
+
+    VENUE +
+
+    '\\nرابط الدعوة: ' +
+
+    SITE_URL +
+
+    '\r\n' +
+
+    'URL:' +
+
+    SITE_URL +
+
+    '\r\n' +
+
+    'END:VEVENT\r\n' +
+
+    'END:VCALENDAR\r\n';
+
+
+
+  const blob = new Blob(
+
+    [icsContent],
+
+    {
+
+      type:'text/calendar;charset=utf-8'
+
+    }
+
+  );
+
+
+
+  const url =
+    URL.createObjectURL(blob);
+
+
+
+  const link =
+    document.createElement('a');
+
+
+
+  link.href = url;
+
+  link.download =
+    'دعوة-زواج-محمد-وسارة.ics';
+
+
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  link.remove();
+
+
+
+  setTimeout(() => {
+
+    URL.revokeObjectURL(url);
+
+  }, 3000);
+
+}
+
+
+
+/* =========================================================
    إضافة الموعد إلى التقويم
    ========================================================= */
 
@@ -804,138 +936,201 @@ calendarButton.addEventListener(
 
 
 
+    if(calendarButton.disabled){
+
+      return;
+
+    }
+
+
+
+    calendarButton.disabled = true;
+
+
+
     /*
 
-      التاريخ:
+      Google Calendar:
 
-      الأربعاء 16 سبتمبر 2026
+      البداية:
+      16 سبتمبر 2026 - 21:00
 
+      النهاية:
+      17 سبتمبر 2026 - 00:00
 
-
-      بداية الحفل:
-
-      9:00 مساءً
-
-
-
-      نهاية الحفل:
-
-      12:00 صباحًا
-
-      أي بداية الخميس 17 سبتمبر 2026
-
-
-
-      صيغة ICS تستخدم وقتًا محليًا عائمًا
-
-      حتى لا يحدث تحويل غير مرغوب فيه بين
-
-      المناطق الزمنية.
+      المنطقة الزمنية:
+      Africa/Cairo
 
     */
 
 
 
-    const icsContent =
+    const googleCalendarUrl =
 
-      'BEGIN:VCALENDAR\r\n' +
+      'https://calendar.google.com/calendar/render?action=TEMPLATE' +
 
-      'VERSION:2.0\r\n' +
+      '&text=' +
 
-      'PRODID:-//Mohammed Sarah Wedding//AR\r\n' +
+      encodeURIComponent(
 
-      'CALSCALE:GREGORIAN\r\n' +
+        'عقد قران وحفل زفاف محمد المصطفى (منا) وسارة'
 
-      'METHOD:PUBLISH\r\n' +
+      ) +
 
-      'BEGIN:VEVENT\r\n' +
+      '&dates=' +
 
-      'UID:mohammed-sarah-wedding-20260916@mohammed-sarah.vercel.app\r\n' +
+      '20260916T210000/20260917T000000' +
 
-      'DTSTAMP:20260902T004500Z\r\n' +
+      '&ctz=' +
 
-      'DTSTART:20260916T210000\r\n' +
+      encodeURIComponent('Africa/Cairo') +
 
-      'DTEND:20260917T000000\r\n' +
+      '&details=' +
 
-      'SUMMARY:عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\r\n' +
+      encodeURIComponent(
 
-      'LOCATION:' + VENUE + '\r\n' +
+        'نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\n\n' +
 
-      'DESCRIPTION:نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة\\nالأربعاء 16 سبتمبر 2026م\\nمن الساعة 9 مساءً حتى 12 صباحًا\\n' +
+        'الأربعاء 16 سبتمبر 2026م\n' +
 
-      VENUE +
+        'من الساعة 9 مساءً حتى 12 صباحًا\n\n' +
 
-      '\\n' +
+        VENUE +
 
-      'رابط الدعوة: ' +
+        '\n\n' +
 
-      SITE_URL +
+        'رابط الدعوة:\n' +
 
-      '\r\n' +
+        SITE_URL
 
-      'URL:' +
+      ) +
 
-      SITE_URL +
+      '&location=' +
 
-      '\r\n' +
-
-      'END:VEVENT\r\n' +
-
-      'END:VCALENDAR\r\n';
+      encodeURIComponent(VENUE);
 
 
 
-    const blob = new Blob(
+    let opened = false;
 
-      [icsContent],
 
-      {
 
-        type:'text/calendar;charset=utf-8'
+    /* =====================================================
+       أجهزة iPhone / iPad
+       ===================================================== */
+
+
+
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (
+        navigator.platform === 'MacIntel' &&
+        navigator.maxTouchPoints > 1
+      );
+
+
+
+    if(isIOS){
+
+      try{
+
+        createICS();
+
+        toastMsg(
+          'تم تجهيز الموعد لإضافته إلى التقويم'
+        );
+
+        opened = true;
 
       }
 
-    );
+      catch(error){
+
+        opened = false;
+
+      }
+
+    }
 
 
 
-    const url =
-      URL.createObjectURL(blob);
+    /* =====================================================
+       باقي الأجهزة:
+       Google Calendar
+       ===================================================== */
 
 
 
-    const link =
-      document.createElement('a');
+    if(!opened){
+
+      try{
+
+        const newWindow =
+          window.open(
+
+            googleCalendarUrl,
+
+            '_blank',
+
+            'noopener,noreferrer'
+
+          );
 
 
 
-    link.href = url;
+        if(newWindow){
 
-    link.download =
-      'دعوة-زواج-محمد-وسارة.ics';
+          opened = true;
+
+        }
+
+      }
+
+      catch(error){
+
+        opened = false;
+
+      }
+
+    }
 
 
 
-    document.body.appendChild(link);
+    /* =====================================================
+       الحل الاحتياطي الأخير
+       ===================================================== */
 
-    link.click();
 
-    link.remove();
+
+    if(!opened){
+
+      try{
+
+        createICS();
+
+        toastMsg(
+          'تم تجهيز الموعد لإضافته إلى التقويم'
+        );
+
+      }
+
+      catch(error){
+
+        toastMsg(
+          'تعذر فتح التقويم'
+        );
+
+      }
+
+    }
 
 
 
     setTimeout(() => {
 
-      URL.revokeObjectURL(url);
+      calendarButton.disabled = false;
 
     }, 1000);
-
-
-
-    toastMsg(
-      'تم تجهيز موعد الدعوة للتقويم'
-    );
 
   }
 
@@ -955,7 +1150,10 @@ salawatButton.addEventListener(
 
   async () => {
 
+
+
     const text =
+
       'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
 
 
@@ -968,7 +1166,7 @@ salawatButton.addEventListener(
 
     catch(error){
 
-      /* لا نوقف إظهار الرسالة إذا فشل النسخ */
+      /* لا نوقف الرسالة عند فشل النسخ */
 
     }
 
