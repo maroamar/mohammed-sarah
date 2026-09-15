@@ -1,45 +1,117 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <meta name="theme-color" content="#f7f1e5">
-<meta name="description" content="دعوة زواج محمد المصطفى (منا) وسارة - الأربعاء 16 سبتمبر 2026م">
+
+<meta
+  name="description"
+  content="دعوة زواج محمد المصطفى (منا) وسارة - الأربعاء 16 سبتمبر 2026م - Capital Palace Hall"
+>
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mohammed-sarah.vercel.app/">
-<meta property="og:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
-<meta property="og:description" content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م - قاعة جولدن هولز">
-<meta property="og:image" content="https://mohammed-sarah.vercel.app/og-cover.png">
+
+<meta
+  property="og:url"
+  content="https://mohammed-sarah.vercel.app/"
+>
+
+<meta
+  property="og:title"
+  content="💍 دعوة زواج | محمد المصطفى (منا) وسارة"
+>
+
+<meta
+  property="og:description"
+  content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م - Capital Palace Hall"
+>
+
+<meta
+  property="og:image"
+  content="https://mohammed-sarah.vercel.app/og-cover.png"
+>
+
 <meta property="og:image:type" content="image/png">
+
 <meta property="og:image:width" content="1200">
+
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="دعوة زواج محمد المصطفى (منا) وسارة">
+
+<meta
+  property="og:image:alt"
+  content="دعوة زواج محمد المصطفى (منا) وسارة"
+>
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="💍 دعوة زواج | محمد المصطفى (منا) وسارة">
-<meta name="twitter:description" content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م">
-<meta name="twitter:image" content="https://mohammed-sarah.vercel.app/og-cover.png">
 
-<link rel="canonical" href="https://mohammed-sarah.vercel.app/">
-<link rel="icon" href="favicon.png" type="image/png">
+<meta
+  name="twitter:title"
+  content="💍 دعوة زواج | محمد المصطفى (منا) وسارة"
+>
 
-<title>دعوة زواج | محمد المصطفى (منا) وسارة</title>
+<meta
+  name="twitter:description"
+  content="✨ نتشرف بدعوتكم لحضور عقد قران وحفل زفافنا | الأربعاء 16 سبتمبر 2026م - Capital Palace Hall"
+>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta
+  name="twitter:image"
+  content="https://mohammed-sarah.vercel.app/og-cover.png"
+>
+
+<link
+  rel="canonical"
+  href="https://mohammed-sarah.vercel.app/"
+>
+
+<link
+  rel="icon"
+  href="favicon.png"
+  type="image/png"
+>
+
+<title>
+  دعوة زواج | محمد المصطفى (منا) وسارة
+</title>
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
 
 <style>
+
 :root{
   --bg:#f4eee2;
   --paper:#fffdf8;
+
   --gold:#b08a43;
-  --gold-dark:#967332;
+  --gold-hover:#967332;
+  --gold-soft:rgba(176,138,67,.16);
+  --gold-line:rgba(176,138,67,.34);
+
   --ink:#332923;
-  --line:rgba(176,138,67,.30);
+  --muted:#786c62;
+
   --shadow:0 18px 45px rgba(58,43,28,.14);
+  --button-shadow:0 5px 16px rgba(58,43,28,.07);
 }
 
 *{
@@ -55,6 +127,7 @@ body{
 }
 
 body{
+
   min-height:100vh;
   min-height:100dvh;
 
@@ -70,54 +143,162 @@ body{
   justify-content:center;
 
   color:var(--ink);
+
   font-family:'Cairo',sans-serif;
+
   overflow-x:hidden;
 }
 
 
 /* =========================
-   الدعوة
-========================= */
+   Invitation
+   ========================= */
 
 .wrapper{
+
   width:min(94vw,420px);
+
   margin-bottom:18px;
 }
 
 .viewer{
+
   position:relative;
+
   width:100%;
 
-  border-radius:18px;
+  border-radius:20px;
+
   overflow:hidden;
 
   background:var(--paper);
-  border:1px solid var(--line);
+
+  border:1px solid var(--gold-line);
 
   box-shadow:var(--shadow);
 }
 
 .invitation-img{
+
   width:100%;
+
   height:auto;
+
   display:block;
 }
 
 
 /* =========================
-   الأزرار
-========================= */
+   Action Buttons
+   ========================= */
 
 .actions{
+
   width:min(94vw,420px);
 
   display:flex;
+
   flex-direction:column;
 
   gap:10px;
 }
 
+.action{
+
+  position:relative;
+
+  width:100%;
+
+  min-height:50px;
+
+  padding:10px 16px;
+
+  border:1px solid var(--gold-line);
+
+  border-radius:16px;
+
+  background:rgba(255,253,248,.94);
+
+  color:var(--ink);
+
+  font:600 14px 'Cairo',sans-serif;
+
+  text-decoration:none;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  cursor:pointer;
+
+  box-shadow:var(--button-shadow);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background-color .18s ease,
+    border-color .18s ease,
+    color .18s ease;
+
+  gap:9px;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+.action-icon{
+
+  width:19px;
+
+  height:19px;
+
+  flex:0 0 19px;
+
+  stroke:currentColor;
+
+  stroke-width:1.8;
+
+  fill:none;
+
+  stroke-linecap:round;
+
+  stroke-linejoin:round;
+}
+
+
+/* Main Location Button */
+
+.action.primary{
+
+  min-height:52px;
+
+  background:linear-gradient(
+    135deg,
+    #b99650 0%,
+    #aa8240 100%
+  );
+
+  border-color:#a77f3d;
+
+  color:#fffdf8;
+
+  box-shadow:
+    0 7px 20px rgba(176,138,67,.25),
+    inset 0 1px 0 rgba(255,255,255,.20);
+
+  font-size:15px;
+
+  font-weight:700;
+}
+
+
+/* Secondary Buttons */
+
 .btn-group{
+
   display:grid;
 
   grid-template-columns:1fr 1fr;
@@ -127,142 +308,140 @@ body{
   width:100%;
 }
 
+.btn-group .action{
 
-/* تصميم الأزرار */
+  min-height:48px;
 
-.action{
-  position:relative;
+  padding-left:10px;
 
-  width:100%;
-  min-height:50px;
+  padding-right:10px;
 
-  padding:10px 14px;
-
-  border:1px solid var(--line);
-  border-radius:13px;
-
-  background:rgba(255,253,248,.96);
-
-  color:var(--ink);
-
-  font:700 14px 'Cairo',sans-serif;
-
-  text-decoration:none;
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  cursor:pointer;
-
-  box-shadow:
-    0 3px 10px rgba(58,43,28,.06);
-
-  transition:
-    transform .18s ease,
-    box-shadow .18s ease,
-    background-color .18s ease,
-    border-color .18s ease;
+  font-size:13px;
 }
 
 
-/* لمسة داخلية بسيطة */
+/* Salawat */
 
-.action::after{
-  content:"";
+.action.salawat{
 
-  position:absolute;
+  min-height:46px;
 
-  inset:3px;
+  margin-top:1px;
 
-  border-radius:10px;
+  background:transparent;
 
-  border:1px solid rgba(176,138,67,.08);
+  border-color:rgba(176,138,67,.22);
 
-  pointer-events:none;
+  color:var(--gold);
+
+  box-shadow:none;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  letter-spacing:.1px;
+}
+
+.action.salawat .action-icon{
+
+  width:17px;
+
+  height:17px;
 }
 
 
-/* الزر الرئيسي */
-
-.action.primary{
-  background:var(--gold);
-
-  border-color:var(--gold);
-
-  color:#fff;
-
-  box-shadow:
-    0 5px 15px rgba(176,138,67,.24);
-
-  font-size:15px;
-}
-
-
-/* الضغط */
+/* =========================
+   Interaction
+   ========================= */
 
 .action:active{
+
   transform:scale(.975);
 
   box-shadow:
-    0 2px 6px rgba(58,43,28,.08);
+    0 2px 7px rgba(58,43,28,.08);
 }
 
+.action.primary:active{
 
-/* التركيز */
+  transform:scale(.975);
+
+  box-shadow:
+    0 3px 10px rgba(176,138,67,.22);
+}
 
 .action:focus-visible{
-  outline:2px solid rgba(176,138,67,.45);
+
+  outline:3px solid rgba(176,138,67,.28);
 
   outline-offset:3px;
 }
 
 
-/* تأثير الكمبيوتر */
-
 @media(hover:hover){
 
   .action:hover{
-    transform:translateY(-1px);
+
+    transform:translateY(-2px);
 
     background:#fffaf0;
 
     border-color:rgba(176,138,67,.50);
 
     box-shadow:
-      0 6px 15px rgba(58,43,28,.09);
+      0 8px 22px rgba(58,43,28,.10);
   }
 
   .action.primary:hover{
-    background:var(--gold-dark);
 
-    border-color:var(--gold-dark);
+    background:linear-gradient(
+      135deg,
+      #c09b54 0%,
+      var(--gold-hover) 100%
+    );
 
-    box-shadow:
-      0 7px 18px rgba(176,138,67,.28);
+    border-color:var(--gold-hover);
+
+    color:#fff;
+  }
+
+  .action.salawat:hover{
+
+    background:rgba(176,138,67,.055);
+
+    border-color:rgba(176,138,67,.32);
+
+    color:var(--gold-hover);
+
+    box-shadow:none;
   }
 }
 
 
 /* =========================
-   نافذة خيارات التقويم
-========================= */
+   Calendar Modal
+   ========================= */
 
 .modal-overlay{
+
   position:fixed;
 
   inset:0;
 
-  background:rgba(0,0,0,.45);
+  background:rgba(38,29,23,.46);
 
-  backdrop-filter:blur(3px);
+  backdrop-filter:blur(5px);
+
+  -webkit-backdrop-filter:blur(5px);
 
   display:flex;
 
   align-items:center;
+
   justify-content:center;
+
+  padding:20px;
 
   z-index:100;
 
@@ -274,62 +453,102 @@ body{
 }
 
 .modal-overlay.show{
+
   opacity:1;
 
   pointer-events:auto;
 }
 
 .modal-card{
+
   width:min(88vw,360px);
 
   background:var(--paper);
 
-  border:1px solid var(--line);
+  border:1px solid var(--gold-line);
 
-  border-radius:18px;
+  border-radius:20px;
 
-  padding:20px 16px;
+  padding:22px 17px 17px;
 
   box-shadow:
-    0 20px 40px rgba(0,0,0,.20);
+    0 24px 55px rgba(0,0,0,.22);
 
   text-align:center;
 
-  transform:scale(.92);
+  transform:translateY(8px) scale(.94);
 
   transition:transform .25s ease;
 }
 
 .modal-overlay.show .modal-card{
-  transform:scale(1);
+
+  transform:translateY(0) scale(1);
 }
 
 .modal-title{
+
+  position:relative;
+
   font-size:16px;
 
   font-weight:700;
 
   color:var(--ink);
 
-  margin-bottom:14px;
+  margin-bottom:17px;
+
+  padding-bottom:12px;
+}
+
+.modal-title::after{
+
+  content:"";
+
+  position:absolute;
+
+  bottom:0;
+
+  right:50%;
+
+  width:42px;
+
+  height:1px;
+
+  background:var(--gold);
+
+  transform:translateX(50%);
+
+  opacity:.65;
 }
 
 .modal-actions{
+
   display:flex;
 
   flex-direction:column;
 
-  gap:8px;
+  gap:9px;
+}
+
+.modal-actions .action{
+
+  min-height:48px;
+
+  font-size:13px;
 }
 
 .modal-close{
-  margin-top:10px;
+
+  margin-top:12px;
+
+  padding:6px 14px;
 
   background:transparent;
 
   border:none;
 
-  color:#888;
+  color:var(--muted);
 
   font-family:'Cairo',sans-serif;
 
@@ -338,14 +557,28 @@ body{
   font-weight:600;
 
   cursor:pointer;
+
+  border-radius:10px;
+
+  transition:
+    color .18s ease,
+    background-color .18s ease;
+}
+
+.modal-close:hover{
+
+  color:var(--ink);
+
+  background:rgba(176,138,67,.07);
 }
 
 
 /* =========================
-   رسالة التنبيه
-========================= */
+   Toast
+   ========================= */
 
 .toast{
+
   position:fixed;
 
   left:50%;
@@ -386,6 +619,7 @@ body{
 }
 
 .toast.show{
+
   opacity:1;
 
   transform:translate(-50%,0);
@@ -393,45 +627,91 @@ body{
 
 
 /* =========================
-   الشاشات الصغيرة
-========================= */
+   Small Screens
+   ========================= */
 
 @media(max-width:390px){
 
   body{
+
     padding-top:10px;
   }
 
-  .btn-group{
-    grid-template-columns:1fr;
+  .wrapper{
+
+    width:min(94vw,400px);
+
+    margin-bottom:15px;
+  }
+
+  .actions{
+
+    width:min(94vw,400px);
+
+    gap:9px;
   }
 
   .action{
+
     min-height:48px;
+
+    border-radius:15px;
+  }
+
+  .action.primary{
+
+    min-height:50px;
+  }
+
+  .btn-group{
+
+    gap:9px;
+  }
+
+  .btn-group .action{
+
+    min-height:47px;
+
+    font-size:12.5px;
+  }
+
+  .action-icon{
+
+    width:18px;
+
+    height:18px;
   }
 }
 
 
 /* =========================
-   تقليل الحركة
-========================= */
+   Reduced Motion
+   ========================= */
 
 @media(prefers-reduced-motion:reduce){
 
   .action,
   .toast,
   .modal-overlay,
-  .modal-card{
+  .modal-card,
+  .modal-close{
+
     transition:none;
   }
 }
+
 </style>
+
 </head>
 
 
 <body>
 
-<main class="wrapper" aria-label="دعوة زواج">
+
+<main
+  class="wrapper"
+  aria-label="دعوة زواج"
+>
 
   <div class="viewer">
 
@@ -439,6 +719,8 @@ body{
       class="invitation-img"
       src="invitation.png"
       alt="دعوة زواج محمد المصطفى (منا) وسارة"
+      width="843"
+      height="1264"
       fetchpriority="high"
       decoding="async"
     >
@@ -448,31 +730,95 @@ body{
 </main>
 
 
-<nav class="actions" aria-label="خيارات الدعوة">
+<nav
+  class="actions"
+  aria-label="خيارات الدعوة"
+>
 
 
-  <!-- الموقع الصحيح للصالة -->
+  <!-- =========================
+       Capital Palace Hall Location
+       ========================= -->
 
   <a
     class="action primary"
-    href="https://maps.app.goo.gl/7jRHT8HtYSfQLDGg6"
+    href="https://www.google.com/maps/place/Capital+palace+hall/@30.0544522,31.3037216,17z/data=!3m1!4b1!4m6!3m5!1s0x14583f00331f6c67:0xa1fd5bbeebd54958!8m2!3d30.0544522!4d31.3037216!16s%2Fg%2F11vtbqgj8h!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D"
     target="_blank"
     rel="noopener noreferrer"
   >
-    📍 موقع الصالة
+
+    <svg
+      class="action-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+
+      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+
+      <circle
+        cx="12"
+        cy="10"
+        r="2.5"
+      />
+
+    </svg>
+
+    <span>
+      موقع Capital Palace Hall
+    </span>
+
   </a>
 
 
-  <!-- أزرار إضافية -->
+  <!-- =========================
+       Calendar + Share
+       ========================= -->
 
   <div class="btn-group">
+
 
     <button
       class="action"
       type="button"
       id="calendarButton"
     >
-      📅 إضافة للتقويم
+
+      <svg
+        class="action-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <rect
+          x="3"
+          y="4.5"
+          width="18"
+          height="17"
+          rx="2.5"
+        />
+
+        <path d="M16 2.5v4"/>
+
+        <path d="M8 2.5v4"/>
+
+        <path d="M3 9.5h18"/>
+
+        <path d="M8 13h.01"/>
+
+        <path d="M12 13h.01"/>
+
+        <path d="M16 13h.01"/>
+
+        <path d="M8 17h.01"/>
+
+        <path d="M12 17h.01"/>
+
+      </svg>
+
+      <span>
+        إضافة للتقويم
+      </span>
+
     </button>
 
 
@@ -481,28 +827,84 @@ body{
       type="button"
       id="shareButton"
     >
-      🔗 أرسل الدعوة
+
+      <svg
+        class="action-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <circle
+          cx="18"
+          cy="5"
+          r="2.5"
+        />
+
+        <circle
+          cx="6"
+          cy="12"
+          r="2.5"
+        />
+
+        <circle
+          cx="18"
+          cy="19"
+          r="2.5"
+        />
+
+        <path d="m8.2 10.8 7.6-4.3"/>
+
+        <path d="m8.2 13.2 7.6 4.3"/>
+
+      </svg>
+
+      <span>
+        أرسل الدعوة
+      </span>
+
     </button>
 
   </div>
 
 
-  <!-- الصلاة على النبي -->
+  <!-- =========================
+       Salawat
+       ========================= -->
 
   <button
-    class="action"
+    class="action salawat"
     type="button"
     id="salawatButton"
   >
-    ✨ صلِّ على النبي ﷺ
+
+    <svg
+      class="action-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+
+      <path d="M12 3.5v17"/>
+
+      <path d="M3.5 12h17"/>
+
+      <path d="M5.5 5.5 18.5 18.5"/>
+
+      <path d="M18.5 5.5 5.5 18.5"/>
+
+    </svg>
+
+    <span>
+      صلِّ على النبي ﷺ
+    </span>
+
   </button>
 
 </nav>
 
 
 <!-- =========================
-     نافذة خيارات التقويم
-========================= -->
+     Calendar Modal
+     ========================= -->
 
 <div
   class="modal-overlay"
@@ -512,6 +914,7 @@ body{
 
   <div class="modal-card">
 
+
     <div class="modal-title">
       اختر تطبيق التقويم الخاص بك
     </div>
@@ -519,13 +922,46 @@ body{
 
     <div class="modal-actions">
 
+
       <a
         class="action"
         id="gCalLink"
         target="_blank"
         rel="noopener noreferrer"
       >
-        تقويم قوقل (Google Calendar)
+
+        <svg
+          class="action-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <rect
+            x="3"
+            y="4.5"
+            width="18"
+            height="17"
+            rx="2.5"
+          />
+
+          <path d="M16 2.5v4"/>
+
+          <path d="M8 2.5v4"/>
+
+          <path d="M3 9.5h18"/>
+
+          <path d="M8 13h.01"/>
+
+          <path d="M12 13h.01"/>
+
+          <path d="M16 13h.01"/>
+
+        </svg>
+
+        <span>
+          تقويم قوقل (Google Calendar)
+        </span>
+
       </a>
 
 
@@ -534,8 +970,27 @@ body{
         type="button"
         id="icsLink"
       >
-        تنزيل ملف التقويم (.ics / آبل)
+
+        <svg
+          class="action-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <path d="M12 3v12"/>
+
+          <path d="m7 10 5 5 5-5"/>
+
+          <path d="M4 20.5h16"/>
+
+        </svg>
+
+        <span>
+          تنزيل ملف التقويم (.ics / آبل)
+        </span>
+
       </button>
+
 
     </div>
 
@@ -548,12 +1003,11 @@ body{
       إلغاء
     </button>
 
+
   </div>
 
 </div>
 
-
-<!-- رسالة التنبيه -->
 
 <div
   class="toast"
@@ -565,9 +1019,18 @@ body{
 
 <script>
 
+
+/* =========================
+   Site
+   ========================= */
+
 const SITE_URL =
   'https://mohammed-sarah.vercel.app/';
 
+
+/* =========================
+   DOM
+   ========================= */
 
 const toast =
   document.getElementById('toast');
@@ -580,7 +1043,6 @@ const salawatButton =
 
 const calendarButton =
   document.getElementById('calendarButton');
-
 
 const calendarModal =
   document.getElementById('calendarModal');
@@ -599,8 +1061,8 @@ let toastTimer;
 
 
 /* =========================
-   رسالة التنبيه
-========================= */
+   Toast
+   ========================= */
 
 function toastMsg(message){
 
@@ -610,17 +1072,18 @@ function toastMsg(message){
 
   toast.classList.add('show');
 
-  toastTimer = setTimeout(() => {
+  toastTimer =
+    setTimeout(() => {
 
-    toast.classList.remove('show');
+      toast.classList.remove('show');
 
-  },2700);
+    },2700);
 }
 
 
 /* =========================
-   نسخ النص
-========================= */
+   Copy
+   ========================= */
 
 async function copyText(text){
 
@@ -638,13 +1101,16 @@ async function copyText(text){
   const textarea =
     document.createElement('textarea');
 
+
   textarea.value = text;
 
   textarea.style.position = 'fixed';
 
   textarea.style.left = '-9999px';
 
+
   document.body.appendChild(textarea);
+
 
   textarea.focus();
 
@@ -664,59 +1130,70 @@ async function copyText(text){
 
   }
 
+
   return true;
 }
 
 
 /* =========================
-   بيانات المناسبة
-========================= */
+   Central Event Data
+   ========================= */
 
 const EVENT_DATA = {
 
   title:
-    "حفل زفاف محمد المصطفى (منا) وسارة",
+    "حفل زفاف محمد المصطفى (منا) وسارة - Capital Palace Hall",
 
   details:
-    "حضور عقد قران وحفل زفاف محمد المصطفى وسارة - قاعة جولدن هولز بوابة 1 نادي السكة الحديد",
+    "نتشرف بدعوتكم لحضور عقد قران وحفل زفاف محمد المصطفى (منا) وسارة - Capital Palace Hall، شارع الفردوس، نادي السكة الحديد، مدينة نصر، القاهرة.",
 
   location:
-    "قاعة جولدن هولز، بوابة 1، نادي السكة الحديد، مدينة نصر، القاهرة",
+    "Capital Palace Hall، شارع الفردوس، نادي السكة الحديد، مدينة نصر، القاهرة",
 
-  /*
-    16 سبتمبر 2026
+  mapsUrl:
+    "https://www.google.com/maps/place/Capital+palace+hall/@30.0544522,31.3037216,17z/data=!3m1!4b1!4m6!3m5!1s0x14583f00331f6c67:0xa1fd5bbeebd54958!8m2!3d30.0544522!4d31.3037216!16s%2Fg%2F11vtbqgj8h!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D",
 
-    التوقيت الصيفي في مصر GMT+3
+  dateText:
+    "الأربعاء 16 سبتمبر 2026م",
 
-    7:00 مساءً محلياً = 16:00 UTC
-    11:00 مساءً محلياً = 20:00 UTC
-  */
+  // Kept exactly as in the previous version.
+  // 16 September 2026: Egypt daylight saving time (GMT+3)
+  // Start: 19:00 local = 16:00 UTC
+  // End: 23:00 local = 20:00 UTC
 
   startUtc:
     "20260916T160000Z",
 
   endUtc:
     "20260916T200000Z"
+
 };
 
 
 /* =========================
-   فتح خيارات التقويم
-========================= */
+   Calendar
+   ========================= */
 
 calendarButton.addEventListener(
   'click',
   () => {
 
+
     const gCalUrl =
+
       `https://calendar.google.com/calendar/render?action=TEMPLATE` +
+
       `&text=${encodeURIComponent(EVENT_DATA.title)}` +
+
       `&dates=${EVENT_DATA.startUtc}/${EVENT_DATA.endUtc}` +
+
       `&details=${encodeURIComponent(EVENT_DATA.details)}` +
+
       `&location=${encodeURIComponent(EVENT_DATA.location)}`;
 
 
-    gCalLink.href = gCalUrl;
+    gCalLink.href =
+      gCalUrl;
 
 
     calendarModal.classList.add('show');
@@ -732,8 +1209,8 @@ calendarButton.addEventListener(
 
 
 /* =========================
-   إغلاق نافذة التقويم
-========================= */
+   Close Calendar Modal
+   ========================= */
 
 closeModal.addEventListener(
   'click',
@@ -749,8 +1226,6 @@ closeModal.addEventListener(
   }
 );
 
-
-/* إغلاق النافذة بالضغط خارجها */
 
 calendarModal.addEventListener(
   'click',
@@ -772,14 +1247,16 @@ calendarModal.addEventListener(
 
 
 /* =========================
-   تنزيل ملف التقويم
-========================= */
+   ICS Download
+   ========================= */
 
 icsLink.addEventListener(
   'click',
   () => {
 
+
     const icsData =
+
 `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Wedding Invitation//AR
@@ -816,15 +1293,20 @@ END:VCALENDAR`;
 
     link.setAttribute(
       'download',
-      'wedding-event.ics'
+      'دعوة-زواج-محمد-وسارة.ics'
     );
 
 
     document.body.appendChild(link);
 
+
     link.click();
 
+
     document.body.removeChild(link);
+
+
+    window.URL.revokeObjectURL(link.href);
 
 
     calendarModal.classList.remove('show');
@@ -844,27 +1326,46 @@ END:VCALENDAR`;
 
 
 /* =========================
-   مشاركة الدعوة
-========================= */
+   Share Invitation
+   ========================= */
 
 shareButton.addEventListener(
   'click',
   async () => {
+
+
+    /*
+      Share the invitation with:
+      - title
+      - event description
+      - invitation URL
+    */
 
     if(navigator.share){
 
       try{
 
         await navigator.share({
-          url: SITE_URL
+
+          title:
+            "دعوة زواج محمد المصطفى (منا) وسارة",
+
+          text:
+            `${EVENT_DATA.dateText}\n${EVENT_DATA.location}`,
+
+          url:
+            SITE_URL
+
         });
+
 
         return;
 
       }catch(error){
 
         if(
-          error.name === 'AbortError'
+          error.name ===
+          'AbortError'
         ){
 
           return;
@@ -875,6 +1376,11 @@ shareButton.addEventListener(
 
     }
 
+
+    /*
+      Fallback:
+      copy the invitation URL.
+    */
 
     try{
 
@@ -897,12 +1403,13 @@ shareButton.addEventListener(
 
 
 /* =========================
-   الصلاة على النبي
-========================= */
+   Salawat
+   ========================= */
 
 salawatButton.addEventListener(
   'click',
   async () => {
+
 
     const text =
       'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ ﷺ';
@@ -920,7 +1427,35 @@ salawatButton.addEventListener(
   }
 );
 
+
+/* =========================
+   Escape closes modal
+   ========================= */
+
+document.addEventListener(
+  'keydown',
+  (e) => {
+
+
+    if(
+      e.key === 'Escape' &&
+      calendarModal.classList.contains('show')
+    ){
+
+      calendarModal.classList.remove('show');
+
+      calendarModal.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+    }
+
+  }
+);
+
 </script>
 
 </body>
+
 </html>
